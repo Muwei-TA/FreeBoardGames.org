@@ -17,7 +17,7 @@ export function generate() {
     (wrapper, game) => {
       if (!game.codes) return wrapper;
 
-      const codes = [...Object.entries(game.codes), ['en', game.code]];
+      const codes = [...Object.entries(game.codes), ['zh', game.code]];
       const pathsByLocale: PathsByLocale = {};
 
       codes.forEach(([language, code]) => {
@@ -29,7 +29,7 @@ export function generate() {
 
       return {
         ...wrapper,
-        rewrites: [...wrapper.rewrites, ...buildRewrite(Object.values(omit(pathsByLocale, ['en'])), pathsByLocale.en)],
+        rewrites: [...wrapper.rewrites, ...buildRewrite(Object.values(omit(pathsByLocale, ['zh'])), pathsByLocale.zh)],
         redirects: [...wrapper.redirects, ...buildRedirect(combinedPaths, pathsByLocale)],
       };
     },

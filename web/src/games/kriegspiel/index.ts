@@ -5,14 +5,14 @@ import instructions from './instructions.md';
 
 export const kriegspielGameDef: IGameDef = {
   code: 'kriegspiel',
-  name: "Guy Debord's Kriegspiel",
+  name: '居伊·德波的战争游戏',
   contributors: ['iamcxds'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.AI }, { mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,
   maxPlayers: 2,
-  description: 'Le Jeu de la Guerre',
-  descriptionTag: `Kriegspiel is a continuation of politics by other means.`,
+  description: '战争游戏（Le Jeu de la Guerre）',
+  descriptionTag: `战争游戏是政治以另一种方式的延续。`,
   instructions: {
     videoId: '4l2M6vpWLAw',
     text: instructions,

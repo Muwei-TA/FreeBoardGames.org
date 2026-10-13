@@ -1,0 +1,19 @@
+{
+  "breadcrumb": "游玩",
+  "play_game": "玩 {{name}}",
+  "video_instructions": "视频说明",
+  "watch": "观看",
+  "missing_translation_warning": "该游戏尚未完全翻译成您的语言。<docs>点击这里</docs>了解如何帮助我们翻译。",
+  "choose_game_mode": "选择游戏模式",
+  "by": "作者：",
+  "computer_ai_title": "电脑（AI）",
+  "computer_ai_description": "在浏览器中与电脑对战。",
+  "local_friend_title": "本地好友",
+  "local_friend_description": "共享设备，与好友面对面游玩。",
+  "online_friend_title": "在线好友",
+  "online_friend_description": "分享链接，与好友在线游玩。",
+  "error": "错误",
+  "loading": "加载中",
+  "play": "游玩",
+  "customization": "自定义"
+}

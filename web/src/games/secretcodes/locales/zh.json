@@ -1,0 +1,28 @@
+{
+  "name": "密码特工",
+  "description": "类似《代号》",
+  "descriptionTag": "免费在线玩密码特工，\n\n一款类似桌游《代号》的游戏！支持 4 至 20 人\n\n在线多人游玩！",
+  "instructions": {
+    "text": "密码特工是一款类似《代号》的游戏。游戏分为蓝红两队，每队各有一名队长。\n\n只有队长知道哪些卡牌需要本队队员去翻。但队长只能用一个词和一个数字作为线索提示本队。\n\n目标是本队其余队员先于对方找出所有己方的暗号词。同时要小心：翻到黑色卡牌将立即输掉游戏！"
+  },
+  "select_teams": "选择队伍",
+  "winners": "获胜方",
+  "red_team_select_cards": "<strong>红队</strong>请翻牌！",
+  "blue_team_select_cards": "<strong>蓝队</strong>请翻牌！",
+  "blue_team_wins": "蓝队获胜",
+  "red_team_wins": "红队获胜",
+  "custom": "自定义",
+  "words": "词牌（{{ size }}）",
+  "blue_team": "蓝队",
+  "red_team": "红队",
+  "unassigned": "未分配",
+  "in_order_to_start": "开始游戏前，所有玩家需要加入队伍，且每队须有一名队长。",
+  "play": "完成，开始！",
+  "s": "[队] ",
+  "make_spymaster": "设为队长",
+  "select": "选择",
+  "toggle_view_spymaster": "切换视角：队长",
+  "toggle_view_normal": "切换视角：普通",
+  "pass": "跳过",
+  "spymaster_give_clue": "<strong>{{ name }}</strong> 请给出线索，"
+}

@@ -1,16 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const mancalaGameDef: IGameDef = {
   code: 'mancala',
-  codes: { en: 'mancala', pt: 'mancala' },
   name: translation.name,
   imageURL: Thumbnail,
-  translationStatus: {
-    pt: IGameTranslationStatus.DONE,
-  },
   contributors: ['pestopancake'],
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,

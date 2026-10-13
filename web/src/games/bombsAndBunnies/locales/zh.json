@@ -1,0 +1,49 @@
+{
+  "name": "炸弹与兔子",
+  "description": "类似《骷髅头》",
+  "descriptionTag": "免费在线玩《炸弹与兔子》（类似《骷髅头》）。\n你可以与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "text": "炸弹与兔子是一款包含虚张声势、心理博弈与奇招策略的游戏，正如《骷髅头》。\n\n每一轮玩家轮流将牌背面朝上打出。随后某人可以下注，赌自己能翻开多少张牌而不碰到炸弹。玩家可以选择加注或跳过。若翻出炸弹，炸弹的主人将随机弃掉该玩家的一张牌。\n\n获胜条件为以下之一：\n- 成功达成赌注两次\n- 其他所有玩家把牌用完"
+  },
+
+  "bet_button": {
+    "bet": "下注！",
+    "cancel": "取消",
+    "skip_button": "跳过"
+  },
+
+  "bet_button_component": {
+    "bet": "下注 {{ bet }}"
+  },
+
+  "bet_display": {
+    "revealed_text": "{{ revealedCount }} / {{ currentBet }}"
+  },
+
+  "bet_panel": {
+    "no_bets_avaliable": "无可用赌注",
+    "bet": "下注 {{ value }}"
+  },
+
+  "player_hand": {
+    "no_cards_left": "没有牌了..."
+  },
+
+  "player_zone": {
+    "waiting_for_players_move": "等待玩家出牌",
+    "has_a_win": "已达胜局",
+    "skipped_bet": "跳过下注",
+    "has_bet": "已下注",
+    "has_max_bet": "已到最大注",
+    "knocked_out": "已淘汰",
+    "discarding": "弃牌中",
+    "being_punished": "受罚中"
+  },
+
+  "game_over": {
+    "draw": "平局",
+    "you_won": "你赢了",
+    "you_lost": "你输了",
+    "player_won": "{{ playerName }} 获胜"
+  }
+}

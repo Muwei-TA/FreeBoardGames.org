@@ -1,107 +1,107 @@
-# Le Jeu de la Guerre
+# 战争游戏（Le Jeu de la Guerre）
 
-A WEB implementation of Guy Debord's A Game of War ([Le Jeu de la Guerre](https://www.wikiwand.com/fr/Le_Jeu_de_la_guerre_(livre))). 
+居伊·德波《战争游戏》（[Le Jeu de la Guerre](https://www.wikiwand.com/fr/Le_Jeu_de_la_guerre_(livre))）的 WEB 实现。
 
-## About the Game
+## 关于本游戏
 
-Here are some materials about the game and its history.
+以下是一些关于该游戏及其历史的资料。
 
-- [BGG page](https://boardgamegeek.com/boardgame/27323/le-jeu-de-la-guerre)
-- [On Class Wargames](https://www.classwargames.net/?p=1636)
+- [BGG 页面](https://boardgamegeek.com/boardgame/27323/le-jeu-de-la-guerre)
+- [Class Wargames 介绍](https://www.classwargames.net/?p=1636)
 - [Kriegspiel](http://r-s-g.org/kriegspiel/about.php)
 
-### Pieces and Strongholds
+### 棋子与要塞
 
-Why emoji? there is nothing more appropriate than emoji to illustrate the Spectacle: we are habiting from symbols to symbols that are produced by L'Autre. The big tech companies decide the meanings and the representations of those symbols, whether [🔫](https://emojipedia.org/pistol/) is a handgun or a harmless toy.
+为什么用 emoji？没有什么比 emoji 更适合描绘“景观”了：我们生活在一个又一个由“他者”生产的符号之中。大型科技公司决定着这些符号的含义与表征，无论 [🔫](https://emojipedia.org/pistol/) 是一把手枪还是一个无害的玩具。
 
-- Units
-  - 💂 Infantry
-  - 🏇 Cavalry
-  - 🎉 Artillery
-  - 🚀 Swift Artillery
-  - 🚩 Relay
-  - 🚚 Swift Relay
-- Strongholds
-  - 🎪 Arsenal
-  - 🏰 Fortress
-  - 🛣️ Mountain Pass
-  - ⛰️ Mountain
-- Battle related symbols
-  - ⚔️ Attack
-  - 🛡️ Defense
-  - 🎯 Combat Range
-  - 🐴 Move Speed
-  - ⚡ Cavalry Charge
-  - 🏃‍♂️ Retreat
-  - 💀 Captured
-  - 😅 Out of Supply
-  - 💥 Battle
+- 单位
+  - 💂 步兵
+  - 🏇 骑兵
+  - 🎉 炮兵
+  - 🚀 快速炮兵
+  - 🚩 通信兵
+  - 🚚 快速通信兵
+- 要塞
+  - 🎪 军械库
+  - 🏰 要塞
+  - 🛣️ 山口
+  - ⛰️ 山地
+- 战斗相关符号
+  - ⚔️ 攻击
+  - 🛡️ 防御
+  - 🎯 战斗范围
+  - 🐴 移动速度
+  - ⚡ 骑兵冲锋
+  - 🏃‍♂️ 撤退
+  - 💀 被俘
+  - 😅 断补给
+  - 💥 战斗
 
-### Rules
+### 规则
 
-You can also refer to the more detailed [rules](http://r-s-g.org/kriegspiel/rules.php) here.
+你也可以参阅更详细的[规则](http://r-s-g.org/kriegspiel/rules.php)。
 
-#### Overall
+#### 总览
 
-![opening](media/opening.png)
+![开局](media/opening.png)
 
-This game is a simulation of the battle in the Napoleonic Wars. Two armies with a limited amount of units fight on a 25⨉20 board. The game ends by occupying(thus destroying) the enemy's all 🎪Arsenals.
+本游戏模拟拿破仑战争中的战斗。两支单位数量有限的军队在 25⨉20 的棋盘上作战。占领（即摧毁）对方所有 🎪军械库即获胜。
 
-Each player can move up to 5 units and attack 1 enemy per turn. The 🐴speed affects the unit's movement range in one turn.
+每位玩家每回合最多可移动 5 个单位并攻击 1 个敌方目标。🐴速度决定单位一回合内的移动范围。
 
-![move](media/move.png)
+![移动](media/move.png)
 
-The two main features are **combat** and **supply** settings
+两大核心机制是**战斗**和**补给**。
 
-Notice "adjacent" in this game means all 8 direction
+注意：本游戏中的“相邻”指全部 8 个方向。
 
-### Combat
+### 战斗
 
-There is no randomness in combat, and combat does not depend on single units. The game stress arranging and cooperating units to achieve high combat factors(i.e. ⚔️Attack and 🛡️Defense), which decide the combat.
+战斗中没有随机性，且战斗不依赖单一单位。游戏强调单位的编排与协作，以获得高战斗系数（即 ⚔️攻击与 🛡️防御），它们决定战斗的胜负。
 
-Every unit radiates its factor in 米 shape within its 🎯combat range. You can see the units that provide ⚔️Atk and 🛡️Def. The total values are the combat factor at that point. Some strongholds 🏰Fortress and 🛣️Mountain Pass can provide extra defense if they are occupied by 💂Infantry or 🎉🚀Artillery.
+每个单位在其 🎯战斗范围内以“米”字形辐射其系数。你可以看到提供 ⚔️攻与 🛡️防的单位，其总和即为该点的战斗系数。某些要塞 🏰要塞和 🛣️山口若被 💂步兵或 🎉🚀炮兵占据，可提供额外防御。
 
-To attack an enemy you need to have a higher ⚔️Atk than its 🛡️Def at that point, and if just higher than 1, the enemy has to 🏃‍♂️retreat this unit; otherwise, it will be 💀captured.
+要攻击敌人，你在该点的 ⚔️攻击必须高于其 🛡️防御；若仅高出 1，敌方必须让该单位 🏃‍♂️撤退，否则该单位将被 💀俘获。
 
-![combat](media/combat.png)
+![战斗](media/combat.png)
 
-#### ⚡Cavalry Charge
+#### ⚡骑兵冲锋
 
-Units usually provide higher 🛡️Def than ⚔️Atk, so to break through the enemy's defense, you can use ⚡cavalry charge.
+单位通常提供的 🛡️防御高于 ⚔️攻击，因此要突破敌方防线，可以使用 ⚡骑兵冲锋。
 
-Just let 🏇cavalry be adjacent to the enemy's unit to toggle ⚡charge, and other 🏇cavalries in the direction line also count. When 🏇cavalry is in ⚡charge, its ⚔️Atk becomes 7, so totally you can get up to 28 ⚔️Atk through ⚡charge.
+只要让 🏇骑兵与敌方单位相邻即可触发 ⚡冲锋，该方向直线上的其他 🏇骑兵也会计入。🏹骑兵处于 ⚡冲锋状态时，其 ⚔️攻击变为 7，因此通过 ⚡冲锋总共可获得最高 28 点 ⚔️攻击。
 
-There are also some restrictions about the ⚡charge, such as one can not charge towards the unit in 🏰Fortress or 🛣️Mountain Pass.
+⚡冲锋也有一些限制，例如不能向位于 🏰要塞或 🛣️山口中的单位发起冲锋。
 
-![charge](media/charge.png)
+![冲锋](media/charge.png)
 
-### Supply
+### 补给
 
-Units highly rely on supply, the unit 😅out of supply can not move nor provide combat factors. Notice that supply could be cut by the enemy.
+单位高度依赖补给，😅断补给的单位无法移动，也无法提供战斗系数。注意，补给线可能被敌方切断。
 
-![supply](media/supply.png)
+![补给](media/supply.png)
 
-The supply originally emitted by 🎪Arsenal, also in 米 shape with unlimited range, except be blocked by enemy's units or ⛰️Mountain. The 🚩🚚relay units can redirect supply lines, and they even can move when they are 😅out of supply.
+补给最初由 🎪军械库发出，同样呈“米”字形且范围无限，但会被敌方单位或 ⛰️山地阻挡。🚩🚚通信单位可以重新定向补给线，甚至在自己 😅断补给时也能移动。
 
-To be in supply, units must be on supply lines or adjacent to units that are in supply.
+要处于补给状态，单位必须位于补给线上，或与处于补给状态的单位相邻。
 
-### Edit Mode
+### 编辑模式
 
-Currently, the game provides a default opening. But you can customize your own with the editor mode.
+目前游戏提供了默认开局。你也可以用编辑器模式自定义开局。
 
-![editor](media/editor.png)
+![编辑器](media/editor.png)
 
-You can Save and Load your game with the FEN-like notation. Merge game can add units to the board, which is useful for players to apply their deploy plans.
+你可以用类 FEN 记谱法保存和加载你的局面。合并游戏可以向棋盘添加单位，方便玩家执行自己的部署计划。
 
-## The Other Implementation
+## 其他实现
 
-You can also try the local version on the [GitHub page](https://iamcxds.github.io/kriegspiel).
+你也可以在 [GitHub 页面](https://iamcxds.github.io/kriegspiel)试玩本地版本。
 
-There is another digital implementation: [Kriegspiel](http://r-s-g.org/kriegspiel/index.php), made by Alex Galloway. There are an [interview](https://www.youtube.com/watch?v=CGjt8po_y4I) and a [playthrough](https://www.youtube.com/watch?v=4l2M6vpWLAw) by Fred Serval. Unfortunately, it's only available on Mac and IOS, which inspires me to make a WEB version.
+还有另一个数字化实现：由 Alex Galloway 制作的 [Kriegspiel](http://r-s-g.org/kriegspiel/index.php)。Fred Serral 有关于它的[访谈](https://www.youtube.com/watch?v=CGjt8po_y4I)和[实况](https://www.youtube.com/watch?v=4l2M6vpWLAw)。遗憾的是它只能在 Mac 和 iOS 上运行，这也促成了我制作 WEB 版本。
 
-## The Ambiguities of Rules (my setting)
+## 规则的模糊之处（我的设定）
 
-- Will enemy units block fire lines? i.e. can I attack back-line units? (no, yes)
-- Will offline enemy units block communication lines? will the retreating unit do? (no, yes)
-- Is failed retreat count as a move? (no)
-- Can offline units retreat? (no)
+- 敌方单位会阻挡火力线吗？即我可以攻击后排单位吗？（不会，可以）
+- 离线的敌方单位会阻挡通信线吗？撤退中的单位呢？（不会，会）
+- 撤退失败算一次移动吗？（不算）
+- 离线的单位可以撤退吗？（不可以）

@@ -1,0 +1,8 @@
+{
+  "loading": "加载中...",
+  "error_while_creating_room": "创建房间时出错",
+  "new_room": "新建房间",
+  "game": "游戏 <b>{{ name }}</b>",
+  "cancel": "取消",
+  "create": "创建"
+}

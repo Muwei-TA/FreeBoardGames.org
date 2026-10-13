@@ -2,7 +2,7 @@ import { cleanup, fireEvent, render, RenderResult } from '@testing-library/react
 import React from 'react';
 import { GameSharing } from './GameSharing';
 
-const GAME_LINK = 'http://localhost/en/room/fooroom';
+const GAME_LINK = 'http://localhost/zh/room/fooroom';
 
 afterEach(cleanup);
 
@@ -16,16 +16,16 @@ describe('GameSharing', () => {
   });
 
   it('should render', () => {
-    expect(wrapper.getByText(/Invite Your Friends/)).toBeTruthy();
+    expect(wrapper.getByText(/邀请你的好友/)).toBeTruthy();
   });
 
   it('should open then close QR code', () => {
     const button = wrapper.getByLabelText('QR code');
     fireEvent.click(button);
-    expect(wrapper.getByText('Scan QR code')).toBeInTheDocument();
-    const closeButton = wrapper.getByText('Done');
+    expect(wrapper.getByText('扫描二维码')).toBeInTheDocument();
+    const closeButton = wrapper.getByText('完成');
     fireEvent.click(closeButton);
-    expect(wrapper.queryByText('Scan QR code')).not.toBeInTheDocument();
+    expect(wrapper.queryByText('扫描二维码')).not.toBeInTheDocument();
   });
 
   it('should share on Facebook', () => {
@@ -44,7 +44,7 @@ describe('GameSharing', () => {
     jest.useFakeTimers();
     const button = wrapper.getByLabelText('Copy');
     fireEvent.click(button);
-    expect(wrapper.getByText('Copied!')).toBeInTheDocument();
+    expect(wrapper.getByText('已复制！')).toBeInTheDocument();
     jest.runAllTimers();
     expect((window as any).copyClipboardMock).toHaveBeenCalledWith(GAME_LINK);
   });

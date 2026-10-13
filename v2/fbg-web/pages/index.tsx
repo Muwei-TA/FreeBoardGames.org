@@ -49,7 +49,7 @@ function Index(props: StaticProps) {
 
 async function getGameCountByLang(): Promise<{ [lang: string]: number }> {
   const result: { [lang: string]: number } = {};
-  result["en"] = gamesJson.length;
+  result["zh"] = gamesJson.length;
   for (const gameId of gamesJson) {
     const gameYaml = await loadGameYaml(gameId);
     const translations = parseGameTranslations(gameYaml, gameId);

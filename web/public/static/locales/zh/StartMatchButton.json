@@ -1,0 +1,6 @@
+{
+  "not_enough_players": "玩家数量不足。",
+  "only_creator_can_start": "只有 {{ name }} 可以开始。",
+  "start_match": "开始对局",
+  "start_match_shuffle": "开始并随机排序玩家"
+}

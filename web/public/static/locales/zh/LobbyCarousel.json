@@ -1,0 +1,6 @@
+{
+  "public_rooms": "公开房间",
+  "new_room": "新建房间",
+  "error": "加载大厅时出错。请尝试刷新。",
+  "no_public_room_available": "暂无公开房间。点击“<b>新建房间</b>”创建一个吧！"
+}

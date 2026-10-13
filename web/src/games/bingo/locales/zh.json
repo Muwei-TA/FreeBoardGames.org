@@ -1,0 +1,19 @@
+{
+  "name": "宾果",
+  "description": "来试试宾果的运气吧！",
+  "descriptionTag": "免费在线玩宾果，最多支持 30 人。",
+  "instructions": {
+    "videoId": "dJ4YDTqmhJk",
+    "text": "游戏目标是率先在横、竖或斜方向连成 5 个数字。每位玩家有一张 5x5 排列数字的卡片，需要标记被报出的数字。随后电脑报出一个数字，若玩家卡片上有该数字则标记之。若有玩家连成一行，则大喊“BINGO”（按下呼喊按钮）。\n\n图片致谢 [Freepik](http://www.freepik.com)"
+  },
+  "player": "玩家 {{ name }}",
+  "draw": "平局",
+  "winner": "获胜者：{{ name }}",
+  "you_won": "你赢了",
+  "you_lost": "你输了（获胜者：{{ name }}）",
+  "player_won": "玩家 {{ name }} 获胜",
+  "table": "表格",
+  "bingo": "宾果！{{ stars }}",
+  "sorry_you_used_up": "<0>抱歉，你的</0><1>宾果呼喊次数已用完 ☹️</1><2>下次好运！</2>",
+  "starting_in": "<0>即将</0> <1>开始...</1>"
+}

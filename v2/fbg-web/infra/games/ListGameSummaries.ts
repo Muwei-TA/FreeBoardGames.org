@@ -8,7 +8,7 @@ export const listGameSummaries = async function (): Promise<GameSummary[]> {
   for (const gameId of gamesJson) {
     const gameYaml = await loadGameYaml(gameId);
     const gameLanguages = parseGameTranslations(gameYaml, gameId);
-    const allLanguages = ["en", ...Object.keys(gameLanguages)];
+    const allLanguages = ["zh", ...Object.keys(gameLanguages)];
     for (const lang of allLanguages) {
       const gameSummary = parseGameSummary(gameYaml, lang, gameId);
       result.push(gameSummary);

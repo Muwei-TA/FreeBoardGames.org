@@ -1,19 +1,13 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const checkersGameDef: IGameDef = {
   code: 'checkers',
-  codes: { en: 'checkers', pt: 'damas', de: 'dame', it: 'dama' },
   name: translation.name,
   contributors: ['JosefKuchar', 'ProspectPyxis', 'mateusazis'],
   imageURL: Thumbnail,
-  translationStatus: {
-    pt: IGameTranslationStatus.DONE,
-    it: IGameTranslationStatus.DONE,
-    de: IGameTranslationStatus.PARTIAL,
-  },
   modes: [{ mode: GameMode.AI }, { mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,
   maxPlayers: 2,

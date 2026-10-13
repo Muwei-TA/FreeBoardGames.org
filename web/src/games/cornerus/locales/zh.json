@@ -1,0 +1,27 @@
+{
+  "name": "角域棋",
+  "description": "类似《角斗士棋》",
+  "descriptionTag": "免费在线玩角域棋，一款类似《角斗士棋》（Blokus）的游戏。可与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "text": "与《角斗士棋》类似，本游戏支持二至四名玩家。若只有两或三名玩家，则一名玩家将分配到两种颜色。\n\n每种颜色有 21 块形状各异的拼块，目标是尽可能多地覆盖棋盘。第一块必须放在该颜色对应的棋盘角落。\n\n后续所有拼块必须与至少一个同色拼块共享一个角。仅当拼块颜色不同时才允许边相邻。当所有人都无法落子时游戏结束。"
+  },
+
+  "board": {
+    "blue": "蓝方",
+    "yellow": "黄方",
+    "blue_yellow": "蓝/黄",
+    "red": "红方",
+    "green": "绿方",
+    "red_green": "红/绿",
+    "player_turn": "轮到 {{ playerName }}",
+    "place_piece": "放置拼块",
+    "waiting_for_oponent": "等待对手...",
+    "end_game": "结束游戏",
+    "game_over": {
+      "draw": "平局",
+      "you_won": "你赢了",
+      "you_lost": "你输了",
+      "player_won": "{{ playerName }} 获胜"
+    }
+  }
+}

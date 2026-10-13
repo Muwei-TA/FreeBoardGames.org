@@ -6,7 +6,7 @@ import { render, RenderResult, cleanup } from '@testing-library/react';
 import { I18n } from 'next-i18next';
 import { mock } from 'jest-mock-extended';
 
-const i18n = mock<I18n>({ language: 'en' });
+const i18n = mock<I18n>({ language: 'zh' });
 
 const CUSTOMIZATION = { module: undefined };
 
@@ -51,9 +51,9 @@ describe('Game Mode Picker', () => {
       { mode: GameMode.LocalFriend },
     ];
     const wrapper = getWrapper(modes);
-    expect(wrapper.queryByText('Online Friend')).toBeInTheDocument();
-    expect(wrapper.queryByText('Computer (AI)')).toBeInTheDocument();
-    expect(wrapper.queryByText('Local Friend')).toBeInTheDocument();
+    expect(wrapper.queryByText('在线好友')).toBeInTheDocument();
+    expect(wrapper.queryByText('电脑（AI）')).toBeInTheDocument();
+    expect(wrapper.queryByText('本地好友')).toBeInTheDocument();
   });
 
   it('should show option to select number of players', () => {
@@ -63,6 +63,6 @@ describe('Game Mode Picker', () => {
       },
     ];
     const wrapper = getWrapper(modes);
-    expect(wrapper.queryByText('2 Players')).toBeInTheDocument();
+    expect(wrapper.queryByText('2 名玩家')).toBeInTheDocument();
   });
 });

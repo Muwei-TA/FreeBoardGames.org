@@ -5,7 +5,7 @@ export function makeTranslationStatusComparator(language: Language) {
   return (game: IGameDef) => {
     const gameTranslationStatus = game.translationStatus?.[language]?.valueOf();
     return (
-      (language === 'en' && gameTranslationStatus !== IGameTranslationStatus.PARTIAL) ||
+      (language === 'zh' && gameTranslationStatus !== IGameTranslationStatus.PARTIAL) ||
       gameTranslationStatus === IGameTranslationStatus.DONE.valueOf()
     );
   };

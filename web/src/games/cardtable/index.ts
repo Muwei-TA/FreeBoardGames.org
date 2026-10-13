@@ -6,14 +6,14 @@ import instructions from './instructions.md';
 
 export const cardtableGameDef: IGameDef = {
   code: 'cardtable',
-  name: 'Card Table Game',
+  name: '牌桌游戏',
   contributors: ['cwatsonc'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,
   maxPlayers: 2,
-  description: 'Simple Card Table No Rules!',
-  descriptionTag: `Card Multiplayer`,
+  description: '简单牌桌，没有规则！',
+  descriptionTag: `纸牌多人游戏`,
   instructions: {
     videoId: 'yFrAN-LFZRU',
     text: instructions,

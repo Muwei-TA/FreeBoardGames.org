@@ -1,0 +1,21 @@
+{
+  "title": "关于",
+  "description": "关于 FreeBoardGames.org，一个免费开源的软件项目。",
+  "card": {
+    "title": "关于 FreeBoardGames.org",
+    "description": "FreeBoardGames.org 是一个自由（如自由般免费）、移动优先的棋盘游戏平台。它的目标是推广棋盘游戏，让大家即使相隔遥远也能轻松地与朋友一起游玩。"
+  },
+  "contributors": {
+    "title": "贡献者"
+  },
+  "credits": {
+    "title": "致谢",
+    "chess_move_sound_by_splice_sound": "国际象棋落子音效来自 SpliceSound",
+    "seabattle_hit_sound_by_fridobeck": "海战命中音效来自 fridobeck",
+    "seabattle_hit_sound_by_qubodup": "海战命中音效来自 qubodup",
+    "seabattle_miss_sound_by_inspector_j": "海战未命中音效来自 InspectorJ",
+    "seabattle_miss_sound_by_cg_effex": "海战未命中音效来自 CGEffex",
+    "blox_font_used_in_logo_by_brian_kent": "Blox 字体（用于徽标）来自 Brian Kent",
+    "bingo_thumbnail_image": "宾果缩略图"
+  }
+}

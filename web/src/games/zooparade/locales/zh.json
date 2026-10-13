@@ -1,0 +1,25 @@
+{
+  "name": "动物大游行",
+  "description": "团队共同获胜的合作游戏！",
+  "descriptionTag": "动物大游行的标签 TODO",
+  "instructions": {
+    "text": "动物大游行是一款 2 到 5 人的合作游戏。它完美地结合了合作与部分信息这两个概念。独特之处：你知道所有的牌，除了你自己的！\n\n玩家越多，游戏就越难，但同时这也是它最好玩的时候！\n\n感谢提供的[美术素材](https://www.freepik.com/free-vector/cute-zoo-animals-card-set_4855079.htm)。\n"
+  },
+  "board": {
+    "show_logs": "显示日志",
+    "hide_logs": "隐藏日志"
+  },
+  "bscore": {
+    "score": "得分 {{ score }}"
+  },
+  "blog": {
+    "success": "✅ 成功",
+    "fail": "❌ 失败",
+    "status_player_played_card": "<b>{{ status }}：{{ player }}</b> 打出了\n<card></card>",
+    "status_player_played_color_value": "<b>{{ status }}：{{ player }}</b> 打出了\n<color></color> <value></value> 牌。",
+    "player_discarded_card": "<b>{{ player }} 弃掉了\n<card></card></b>",
+    "player_discarded_color_value": "<b>{{ player }}</b> 弃掉了 <color></color> <value></value> 牌。",
+    "player_gave_a_color_hint": "<b>{{ player }}</> 给了 {{ receiver }} 一个颜色提示：<color></color>",
+    "player_gave_a_value_hint": "<b>{{ player }}</> 给了 {{ receiver }} 一个数字提示：<value></value>"
+  }
+}

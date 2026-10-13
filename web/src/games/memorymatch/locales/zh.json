@@ -1,0 +1,26 @@
+{
+  "name": "记忆翻牌",
+  "description": "锻炼记忆的小游戏",
+  "descriptionTag": "免费在线玩记忆翻牌。\n可与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "videoId": "oFfYmrGeTPs",
+    "text": "这是一款简单的记忆游戏，你需要配对相同的卡牌。开局时所有卡牌背面朝上，玩家每回合可翻开两张牌。配对成功最多的玩家获胜。\n\n图片致谢 [freepik.com](https://www.freepik.com/free-vector/cute-zoo-animals-card-set_4855079.htm)"
+  },
+
+  "board": {
+    "player_1": "玩家 1",
+    "player_2": "玩家 2",
+    "players_turn": "{{ playerName }} 的回合",
+    "your_turn": "你的回合",
+    "waiting_for_player": "等待 {{ playerName }}",
+    "draw": "平局",
+    "player_won": "{{ winnerName }} 获胜",
+    "you_won": "你赢了",
+    "see_scoreboard": "查看记分板",
+    "you_lost": "你输了"
+  },
+
+  "customization": {
+    "stay_in_turn_on_match": "配对成功后继续行动"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "name": "秘密德古拉",
+  "description": "类似《秘密希特勒》",
+  "descriptionTag": "秘密德古拉",
+  "instructions": {
+    "videoId": "mbGXIDYdtas",
+    "text": "感谢 https://www.secrethitler.com ！\n\n本游戏《秘密德古拉》是《秘密希特勒》的一个演绎版本。规则请见\nhttps://www.secrethitler.com/assets/Secret_Hitler_Rules.pdf 。《秘密希特勒》与《秘密德古拉》的区别主要在题材外观上，游戏规则保持不变。\n\n一场充斥欺骗、谎言与吸血鬼的游戏！\n\n在《秘密德古拉》中，玩家分为两个阵营：吸血鬼与村民。其中一名吸血鬼是德古拉。尽管吸血鬼是少数派，但他们彼此知晓身份，而村民并不知情。\n\n每一回合，一名玩家成为村长候选人，并提名另一名玩家为神父。随后当选村长从三张牌中弃掉一张，牌可能是血液牌（利于吸血鬼）或村庄牌。当选神父再从剩下的两张牌中选择一张作为政策颁布。\n\n村民通过颁布 5 项村庄政策，或杀死德古拉获胜。吸血鬼通过颁布 6 项吸血鬼政策，或颁布 3 项政策并选举德古拉为村长获胜。"
+  },
+
+  "symbol": {
+    "priest": "✝️",
+    "mayor": "🏅",
+    "candidate": "❓",
+    "vampire": "🧛",
+    "dracula": "👑",
+    "good_po": "💧",
+    "bad_po": "🩸",
+    "tup": "👍",
+    "tdown": "👎",
+    "peek": "👀",
+    "investg": "🕵️‍♂️",
+    "search": "🔍",
+    "execute": "🗡️",
+    "elect": "🗳️",
+    "coffin": "⚰️",
+    "dead": "🥀"
+  },
+
+  "cname": {
+    "priest": "神父 $t(symbol.priest)",
+    "mayor": "村长 $t(symbol.mayor)",
+    "villager": "村民 🧑‍🤝‍🧑",
+    "villagers": "村民 🧑‍🤝‍🧑🧑‍🤝‍🧑🧑‍🤝‍🧑",
+    "vampire": "吸血鬼 $t(symbol.vampire)",
+    "vampires": "吸血鬼 $t(symbol.vampire)$t(symbol.vampire)$t(symbol.vampire)",
+    "sample": "样本",
+    "samples": "样本",
+    "veto": "否决 ✋",
+    "agree_veto": "同意否决 $t(symbol.tup)",
+    "reject_veto": "拒绝否决 $t(symbol.tdown)",
+    "execute": "处决 $t(symbol.execute)",
+    "dracula": "德古拉"
+  },
+
+  "phase": {
+    "chose_priest": "$t(cname.mayor) 正在提名",
+    "vote_priest": "$t(symbol.elect) 投票 $t(symbol.elect)",
+    "end_vote_priest": "$t(symbol.elect) 投票 $t(symbol.elect) 结果",
+    "discard_mayor": "$t(cname.mayor) 弃掉一张 $t(cname.sample)",
+    "discard_priest": "$t(symbol.priest) 弃掉一张 $t(cname.sample)",
+    "discard_priest_veto": "$t(symbol.priest) 可以 $t(cname.veto)",
+    "veto_mayor": "$t(cname.mayor) 审议 $t(cname.veto)",
+    "check_election_counter": "计票中",
+    "special": "特殊阶段",
+    "no_special": "特殊选举结束",
+    "execution": "$t(symbol.execute) 处决一名玩家 $t(symbol.execute)",
+    "special_election": "$t(symbol.elect) 特殊选举 $t(symbol.elect)",
+    "investigate1": "调查$t(symbol.peek)",
+    "investigate2": "调查$t(symbol.peek)",
+    "peek_policy": "偷看 $t(symbol.peek) 接下来的 $t(cname.samples)"
+  },
+
+  "player": "玩家 {{ id }}",
+  "vampires_win": "$t(cname.vampires) 获胜",
+  "villagers_in": "$t(cname.villagers) 获胜",
+  "info": "信息：",
+  "spectator": "[旁观者] ",
+  "play": "开始",
+  "ok_to_continue": "点击确定继续...",
+  "yes": "是 👍",
+  "no": "否 👎",
+  "okay": "确定",
+  "hide_info": "隐藏信息",
+
+  "vampire_policy": "7 个格子表示已通过的 $t(cname.vampires) $t(cname.samples)（$t(symbol.bad_po)）数量。\n当前值：{{ value }}\n$t(symbol.peek) - 允许 $t(cname.mayor) 查看接下来的牌。\n$t(symbol.investg) - 允许 $t(cname.mayor) 调查一名玩家。\n$t(symbol.elect) - 重新选举新的 $t(cname.mayor)。\n$t(symbol.execute) - 要求 $t(cname.mayor) 处决一名玩家。\n$t(symbol.coffin) - $t(cname.vampires) 直接获胜。",
+
+  "villager_policy": "6 个格子表示已通过的 $t(cname.villager) $t(cname.samples)（$t(symbol.good_po)）数量。\n当前值：{{ value }}",
+
+  "election_counter": "$t(symbol.elect) $t(symbol.elect) $t(symbol.elect) 是选举追踪器。\n若因否 👎 票过多导致连续三次选举失败（❌），最顶上的 $t(cname.sample) 将自动颁布。不会触发 $t(symbol.peek)、$t(symbol.investg)、$t(symbol.execute) 等特殊行动。",
+
+  "veto_enabled": "$t(cname.veto) 权力现已启用 ☑️。\n$t(cname.priest) 可以提议否决，若 $t(cname.mayor) 同意否决，则不颁布任何 $t(cname.sample)。若 $t(cname.mayor) 拒绝否决，$t(cname.priest) 必须颁布一张 $t(cname.sample)。",
+
+  "dracula_strong": "$t(cname.vampires) 现在强势 💪🏻。\n从这里开始，若 $t(cname.dracula) 被选为 $t(cname.priest)，$t(cname.vampires) 直接获胜",
+
+  "vampire_strong": "$t(cname.vampire) 💪🏻",
+
+  "veto_check": "$t(cname.veto) ☑️",
+
+  "is_dead": "你已被处决 $t(symbol.dead)。\n但你仍可以留下来看看游戏如何收场！",
+
+  "phase_chose_priest": {
+    "nominate_a_priest": "作为 $t(cname.mayor)，你需要提名一名 $t(cname.priest)。\n点击头顶带 $t(symbol.candidate) 标记的玩家即可完成提名。",
+    "wait_to_nominate_priest": "等待 $t(cname.mayor) 提名 $t(cname.priest) 进入投票...",
+    "possible_nominees": "$t(symbol.candidate) 标记表示神父候选人。"
+  },
+
+  "phase_vote_priest": {
+    "new_priest_election": "你愿意选举 {{ name }} 为新任 $t(cname.priest) 吗 $t(symbol.candidate)",
+    "wait_others_to_vote": "等待其他玩家投票..."
+  },
+
+  "phase_end_vote_priest": {
+    "election_results": "选举结果：{{ yes }} 票赞成 👍，{{ no }} 票反对 👎",
+    "waiting_for_other_players_to_click_okay": "等待其他玩家点击确定..."
+  },
+
+  "phase_discard": {
+    "you_must_discard_one_sample": "作为 {{ playerTag }}，你必须弃掉一张 $t(cname.sample)。",
+    "click_to_discard": "$t(symbol.bad_po) 属于 $t(cname.vampires)，$t(symbol.good_po) 属于 $t(cname.villagers)。\n点击你要弃掉的 $t(cname.sample)。",
+    "priest_veto_proposal": "你也可以提议否决。",
+    "wait_to_discard_a_sample": "等待 {{ playerTag }} 弃掉一张 $t(cname.sample)..."
+  },
+
+  "phase_veto_mayor": {
+    "reject_or_agree": "作为 $t(cname.mayor)，你可以\n拒绝 $t(symbol.tdown) 或同意 $t(symbol.tup) 这次 $t(cname.veto)",
+    "policy_already_given_to_the_priest": "此前，{{ text }} 已交给 $t(cname.priest)。",
+    "priest_called_a_veto": "$t(cname.priest) 发起了 $t(cname.veto)，$t(cname.mayor) 正在审议！\n若否决被拒绝，$t(cname.priest) 将被迫颁布一张 $t(cname.sample)。否则将开始新一轮。"
+  },
+
+  "phase_peek_policy": {
+    "upcoming_sample": "你可以看到接下来的 $t(cname.sample)\n接下来的样本是：{{ text }}",
+    "mayor_is_looking": "$t(cname.mayor) 正在查看接下来的三张样本。"
+  },
+
+  "phase_investigate1": {
+    "you_are_the_mayor": "你是 $t(cname.mayor)。\n你可以调查任何带 $t(symbol.search) 标记的玩家。\n点击你想调查的玩家...",
+    "mayor_is_investigating": "$t(cname.mayor) 正在调查 $t(symbol.peek) 一名玩家..."
+  },
+
+  "phase_investigate2": {
+    "player_is_a_vampire": "{{ name }} 是 $t(cname.vampire)",
+    "player_is_a_villager": "{{ name }} 是 $t(cname.villager)",
+    "player_is_being_investigated": "正在调查 {{ name }}。"
+  },
+
+  "phase_special_election": {
+    "current_mayor": "你是现任 $t(cname.mayor)，请选择下一任 $t(cname.mayor)",
+    "click_on_candidate": "点击带 $t(symbol.candidate) 标记的玩家即可完成选择。",
+    "next_mayor": "现任 $t(cname.mayor) 正在选下一任 $t(cname.mayor)。"
+  },
+
+  "phase_execution": {
+    "you_are_the_mayor": "你是 $t(cname.mayor)，你必须 $t(cname.execute) 一名玩家！",
+    "click_on_candidate": "点击带 $t(symbol.candidate) 标记的玩家即可完成选择。",
+    "mayor_will_execute_a_player": "$t(cname.mayor) 将 $t(cname.execute) 一名玩家！"
+  }
+}

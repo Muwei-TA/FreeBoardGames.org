@@ -1,16 +1,16 @@
-Estate Buyer is a quick, fun game nominally about buying and selling real estate. During the game's two distinct phases, players first bid for several buildings then, after all buildings have been bought, sell the buildings for the greatest profit possible.
+地产大买家是一款节奏轻快、有趣的游戏，主题是买卖房地产。游戏的两个截然不同的阶段中，玩家先竞拍若干楼房，待所有楼房售出后，再以尽可能高的利润卖出这些楼房。
 
-Phase 1: Buying Buildings
-Turn face up a number of building cards equal to the number of players. Then all buildings will be auctioned at the same time, so that no player goes empty handed. Each player can now bid or pass.
+阶段一：买入楼房
+翻开与玩家人数相同的楼房牌。然后所有楼房将同时拍卖，确保没有玩家空手而归。每位玩家现在可以叫价或弃权。
 
-Bidding: The player who lives in the smallest house begins and lays one or more of his chips in the middle. Others follow suit, but must bid more than the present highest bid. Bidding continues for as many rounds as necessary until all players have passed.
+叫价：住在最小房子里的玩家开始，将一枚或多枚筹码押到中央。其他人依次跟进，但必须叫出高于当前最高价的价码。叫价持续进行，直到所有玩家都弃权为止。
 
-Passing: If a player passes, he no longer bids and takes the building with the lowest value. He also takes back half his bid rounded down. The rest goes to the bank. The last player remaining takes the highest value building but pays all his chips. Note: It is not necessary to bid anything to gain the least valuable building.
+弃权：如果玩家弃权，他不再参与叫价，并获得价值最低的楼房。他同时可以拿回自己叫价筹码的一半（向下取整），其余归银行。最后剩下的玩家获得价值最高的楼房，但需付出全部筹码。注意：想获得价值最低的楼房，根本不需要出任何价。
 
-Buildings gained are placed face down in front of each player. The player taking the most valuable building turns over the next set of replacement cards for auction, and bids again, or passes. This continues until all buildings have been sold. Unused chips are kept. They will be worth one million each.
+买到的楼房面朝下放在每位玩家面前。获得最有价值楼房的玩家翻开下一组用于拍卖的补充牌，再次叫价或弃权。如此继续，直到所有楼房售出。未使用的筹码保留，每枚价值一百万。
 
-Phase 2: Selling Buildings
-Now the checks are used. As in Phase 1, the same number of checks will be turned face up. Each player takes his buildings in his hand and plays 1 card face down in front of him. These are turned over simultaneously. The player who has played the most valuable building card takes the biggest check. The player with the second most valuable card takes the second biggest check etc. Building cards are discarded.
+阶段二：卖出楼房
+现在开始使用支票。与阶段一相同，翻开相同数量的支票。每位玩家将手中的楼房拿起，面朝下打出 1 张在自己面前。这些牌同时翻开。打出最有价值楼房牌的玩家获得最大的支票，第二有价值的获得第二大的支票，依此类推。楼房牌随即弃掉。
 
-Game End
-The game ends when all players have sold their buildings. Players add up their checks and chips (1 million each), and the richest player wins. Ties are resolved in favor of the player with the most chips.
+游戏结束
+当所有玩家卖完自己的楼房后，游戏结束。玩家将自己的支票和筹码（每枚一百万）相加，最富有的玩家获胜。平局时，筹码最多的玩家获胜。

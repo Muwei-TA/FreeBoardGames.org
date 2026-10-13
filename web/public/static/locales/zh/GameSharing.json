@@ -1,0 +1,11 @@
+{
+  "copied": "已复制！",
+  "copy_link": "复制链接",
+  "invite_your_friends": "邀请你的好友",
+  "room": "房间：{{ name }}",
+  "share_on_facebook": "分享到 Facebook",
+  "share_on_whats_app": "分享到 WhatsApp",
+  "show_qr_code": "显示二维码",
+  "share" : "通过系统分享",
+  "play_game": "玩 {{name}}"
+}

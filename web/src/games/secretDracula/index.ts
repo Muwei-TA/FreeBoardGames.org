@@ -1,14 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const secretDraculaGameDef: IGameDef = {
   code: 'secretDracula',
   name: translation.name,
   contributors: ['Spooky-0'],
-  translationStatus: { pt: IGameTranslationStatus.DONE },
-  codes: { pt: 'dracula-secreto' },
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }],
   minPlayers: 5,

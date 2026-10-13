@@ -1,17 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const picnicGoGameDef: IGameDef = {
   code: 'picnicGo',
   name: translation.name,
   contributors: ['ProspectPyxis'],
-  translationStatus: {
-    it: IGameTranslationStatus.DONE,
-    pt: IGameTranslationStatus.DONE,
-  },
-  codes: { it: 'pic-nicGo', pt: 'piquenique-go' },
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }],
   minPlayers: 2,

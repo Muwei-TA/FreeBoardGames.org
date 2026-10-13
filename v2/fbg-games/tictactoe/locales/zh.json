@@ -1,0 +1,13 @@
+{
+  "easy": "简单",
+  "hard": "困难",
+  "your_turn": "轮到你了",
+  "waiting_for_opponent": "等待对手中…",
+  "red_s_turn": "红方回合",
+  "green_s_turn": "绿方回合",
+  "you_won": "你赢了",
+  "you_lost": "你输了",
+  "red_won": "红方赢了",
+  "green_won": "绿方赢了",
+  "draw": "平局"
+}

@@ -1,0 +1,8 @@
+{
+  "edit_nickname": "修改昵称",
+  "remove_user": "移除用户",
+  "move_up_user": "上移用户",
+  "shuffle_users": "随机排序",
+  "waiting_for_player": "等待玩家加入...",
+  "players": "玩家（{{ occupancy }}/{{ capacity }}）"
+}

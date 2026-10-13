@@ -5,14 +5,14 @@ import instructions from './instructions.md';
 
 export const warGameDef: IGameDef = {
   code: 'war',
-  name: 'War',
+  name: '比大小',
   contributors: ['ignoreintuition'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],
   minPlayers: 2,
   maxPlayers: 2,
-  description: 'War is a simple card game, typically played by two players using a standard playing card deck.',
-  descriptionTag: 'War is a simple card game.',
+  description: '比大小是一款简单的纸牌游戏，通常由两名玩家使用一副标准扑克牌进行。',
+  descriptionTag: '比大小是一款简单的纸牌游戏。',
   instructions: {
     videoId: '23QQ1Hz2-jY',
     text: instructions,

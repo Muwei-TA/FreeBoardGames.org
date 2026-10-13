@@ -1,0 +1,5 @@
+{
+  "your_turn": "《{{ name }}》轮到你了！",
+  "mute_session": "本次会话静音",
+  "unmute_session": "取消会话静音"
+}

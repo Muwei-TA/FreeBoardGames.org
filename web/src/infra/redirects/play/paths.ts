@@ -20,7 +20,7 @@ export const playPaths: TranslatedPath[] = [
   {
     rewrites: [
       ...gameRewrites,
-      ...buildRewrite(Object.values(omit(fallbackPathsByLocale, ['en'])), fallbackPathsByLocale.en),
+      ...buildRewrite(Object.values(omit(fallbackPathsByLocale, ['zh'])), fallbackPathsByLocale.zh),
     ],
     redirects: [...gameRedirects],
   },

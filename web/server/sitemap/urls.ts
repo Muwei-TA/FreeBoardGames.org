@@ -33,7 +33,7 @@ function getDefaultUrls(): UrlTag[] {
 
 function isValidLanguage(game: IGameDef, language: string) {
   const translationStatus = (game.translationStatus || {})[language];
-  if (language != 'en' && translationStatus != IGameTranslationStatus.DONE) {
+  if (language != 'zh' && translationStatus != IGameTranslationStatus.DONE) {
     return false;
   }
   return true;

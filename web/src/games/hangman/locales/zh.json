@@ -1,0 +1,46 @@
+{
+  "name": "猜单词",
+  "description": "经典游戏",
+  "descriptionTag": "免费在线玩猜单词（上吊小人）。可与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "videoId": "leW9ZotUVYo",
+    "text": "猜单词是一款广为人知的双人游戏。一名玩家需要在仅知道单词长度和一条提示的情况下猜出该单词。玩家尝试猜测单词中的字母，最多允许猜错 10 次。若猜对单词，最终得分为正确猜测数与总猜测数之比。若猜错超过 10 次，最终得分为零。"
+  },
+
+  "board": {
+    "your_turn": "轮到你猜",
+    "playerName_is_guessing": "{{ playerName }} 正在猜",
+    "player_turn": "玩家 {{ playerName }} 的回合",
+    "mistakes": "错误：{{ mistakeCount }}/{{ MAX_MISTAKE_COUNT }}",
+    "see_hint": "查看提示",
+    "hint": "提示",
+    "player_a": "A",
+    "player_b": "B",
+    "waiting_player": "等待 {{ playerName }} 输入单词...",
+    "player": {
+      "enter_word": "玩家 {{ playerName }}：输入单词",
+      "enter_secret_word": "输入秘密单词"
+    },
+    "correct": "正确",
+    "incorrect": "错误",
+    "your_guess_outcome": "你猜{{ guessOutcome }}了。",
+    "extra_your_score": "你的得分是 {{ score }} 分。",
+    "extra_word_to_guess": "要猜的单词是 {{ secret }}。",
+    "button_next": "下一个",
+    "guess_message": "{{ playerName }} 猜{{ guessOutcome }}了。",
+    "extraMessage": "{{ playerName }} 得了 {{ score }} 分。",
+    "game_over": {
+      "draw": "平局",
+      "you_won": "你赢了",
+      "you_lost": "你输了",
+      "spectator": "查看记分板",
+      "player_won": "玩家 {{ playerName }} 获胜"
+    }
+  },
+
+  "EnterWordPrompt": {
+    "max_chars": "单词（最多 {{ MAX_WORD_LENGTH }} 字符）",
+    "hint_max_chars": "提示（最多 {{ MAX_CHARS }} 字符）",
+    "play": "开始"
+  }
+}

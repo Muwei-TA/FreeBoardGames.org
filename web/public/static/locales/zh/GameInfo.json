@@ -1,0 +1,7 @@
+{
+  "breadcrumb": "游玩",
+  "play": "玩 {{name}}",
+  "video_instructions": "视频教程",
+  "watch": "观看",
+  "missing_translation_warning": "该游戏尚未完全翻译成您的语言。<docs>点击此处</docs>了解如何帮助我们翻译。"
+}

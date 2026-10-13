@@ -1,0 +1,21 @@
+{
+  "name": "国际象棋",
+  "description": "国际规则",
+  "descriptionTag": "在浏览器中免费在线玩国际象棋，\n\n 与顶级象棋电脑对战。可将电脑等级设为 1 至 8 级，\n\n 从新手到大师。也可以轻松分享链接与好友在线对弈，\n\n 或共享设备与好友面对面游玩！",
+  "instructions": {
+    "videoId": "fKxG8KjH1Qg",
+    "text": "国际象棋是一款双人棋盘游戏。在正方形棋盘上进行，棋盘由 64 个小方格组成，每边 8 格。\n\n双方各执十六子：八兵、双马、双象、双车、一后一王。执白一方先行。\n\n游戏目标是设法将死对方的王。\n\n将死是的一种局面：一方的王受到捕获威胁且无法解除。将死对方即获胜。\n\n[点击此处查看每种棋子的走法。](https://www.chessusa.com/chess-rules.html)\n"
+  },
+  "difficulty": "难度",
+  "your_turn": "轮到你",
+  "waiting_for_opponent": "等待对手...",
+  "white_s_turn": "轮到白方",
+  "black_s_turn": "轮到黑方",
+  "check": "将军",
+  "you_lost": "你输了",
+  "you_won": "你赢了",
+  "black_won": "黑方获胜",
+  "white_won": "白方获胜",
+  "enable": "开启",
+  "disable": "关闭"
+}

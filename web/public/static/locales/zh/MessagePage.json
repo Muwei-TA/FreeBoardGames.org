@@ -1,0 +1,8 @@
+{
+  "go_home": "返回首页",
+  "game_not_found": "未找到游戏",
+  "invalid_game_mode": "无效的游戏模式",
+  "connecting": "连接中...",
+  "downloading": "正在下载 {{ name }}",
+  "failed_to_download": "下载 {{ name }} 失败"
+}

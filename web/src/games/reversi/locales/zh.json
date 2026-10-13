@@ -1,0 +1,24 @@
+{
+  "name": "黑白棋",
+  "description": "类似 Rolit 和奥赛罗棋",
+  "descriptionTag": "免费在线玩黑白棋，一款类似 Rolit 和奥赛罗棋的游戏。可与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "text": "与 Rolit 类似，本游戏是黑白棋的一个变体，最多支持 4 名玩家。共有四种颜色，每位玩家执一种颜色。\n\n游戏目标是比所有对手占据更多格子。为此，玩家可以在空格上放置棋子，只要该落子能夹住对方棋子即可。\n\n通过与己方已有棋子成对角、横向或纵向的位置落子，即可夹住并翻转对方棋子。\n\n当无任何可行落子时游戏结束，多数情况下即棋盘下满。"
+  },
+
+  "board" : {
+    "draw": "平局",
+    "you_won": "你赢了",
+    "you_lost": "你输了",
+    "see_scoreboard": "查看记分板",
+    "player": "玩家",
+    "player_wins": "{{ playerName }} 获胜",
+    "red": "红方",
+    "green": "绿方",
+    "players_turn": "轮到 {{ playerName }}",
+    "place_piece": "放置棋子",
+    "waiting_for_opponent": "等待对手...",
+    "your_turn": "轮到你",
+    "waiting_for_player": "等待 {{ playerName }}..."
+  }
+}

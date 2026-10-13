@@ -1,0 +1,20 @@
+{
+  "name": "海战棋",
+  "description": "类似《海战》",
+  "descriptionTag": "免费在线玩海战棋，\n\n 一款类似《海战》（Battleship）的游戏。可与电脑单人对战，\n\n 或与好友在线多人对战。",
+  "instructions": {
+    "text": "海战棋本质上是一款双人猜位游戏。在方格棋盘上进行，双方的船队对对方隐藏。玩家轮流发射炮弹攻击对方船只，目标是摧毁对方全部舰队。\n"
+  },
+  "hit": "命中",
+  "miss": "未命中",
+  "click_to_shoot": "点击开炮",
+  "waiting_for_opponent": "等待对手...",
+  "you_won": "你赢了",
+  "you_lost": "你输了",
+  "your_opponent_s_board": "对方的棋盘",
+  "enable_sound": "开启音效",
+  "disable_sound": "关闭音效",
+  "drag_drop_click_to_rotate": "拖拽放置，点击旋转",
+  "invalid_positioning": "位置无效",
+  "done": "完成"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "四子连珠",
+  "description": "类似《 Connect Four》",
+  "descriptionTag": "免费玩四子连珠。可与好友在线多人对战，或共享设备面对面游玩。",
+  "instructions": {
+    "text": "四子连珠是一款双人连线游戏。玩家首先选择一种颜色，然后轮流将彩色圆盘从顶部放入垂直悬挂的七列六行棋盘中。\n\n棋子会直接落下，占据该列最下方的空位。\n\n游戏目标是率先将自己的四个棋子连成横、竖或斜的一条线。"
+  },
+
+  "board": {
+    "your_turn": "轮到你",
+    "waiting_for_player": "等待 {{ pName }}...",
+    "player_turn": "轮到 {{ pName }}",
+    "game_over": {
+      "you_won": "你赢了",
+      "you_lost": "你输了",
+      "player_won": "{{ pName }} 获胜",
+      "draw": "平局"
+    }
+  },
+
+  "local": {
+    "blue": "蓝方",
+    "red": "红方"
+  }
+}

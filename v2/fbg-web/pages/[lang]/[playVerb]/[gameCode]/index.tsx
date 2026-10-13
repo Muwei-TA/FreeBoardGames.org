@@ -48,7 +48,7 @@ const GameInfo: NextPage<GameInfoProps> = function (props: GameInfoProps) {
   const { t } = useTranslation("GameInfo");
   const lang = props.summary.lang;
   const isFullyTranslated =
-    lang == "en" || props.translations[lang] === GameTranslationStatus.DONE;
+    lang == "zh" || props.translations[lang] === GameTranslationStatus.DONE;
   const instructions = props.details.instructions;
   const gameVideoInstructions = instructions.videoId ? (
     <GameInstructionsVideo videoId={instructions.videoId} />

@@ -1,2 +1,2 @@
-Instructions for your game.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+游戏说明（待补充）。
+此文件为占位内容，尚未撰写正式规则。

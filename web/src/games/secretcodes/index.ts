@@ -1,14 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
 import { GameMode } from 'gamesShared/definitions/mode';
-import translation from './locales/en.json';
+import translation from './locales/zh.json';
 
 export const secretcodesGameDef: IGameDef = {
   code: 'secretcodes',
   name: translation.name,
   contributors: ['JvSomeren', 'mateusazis'],
-  translationStatus: { pt: IGameTranslationStatus.DONE, de: IGameTranslationStatus.DONE },
-  codes: { pt: 'codigos-secretos', de: 'secretcodes' },
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.LocalFriend }, { mode: GameMode.OnlineFriend }],
   minPlayers: 4,

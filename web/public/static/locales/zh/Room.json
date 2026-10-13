@@ -1,0 +1,12 @@
+{
+  "you_were_removed_from_the_room": "你已被移出房间。",
+  "try_again": "重试",
+  "ok": "确定",
+  "change_game": "更换游戏",
+  "failed_to_fetch_room_metadata": "获取房间信息失败。",
+  "leave_room": "离开房间",
+  "max_players": "{{ name }} 最多支持 {{ max }} 名玩家，但当前房间已有 {{ current }} 名玩家。",
+  "failed_to_set_nickname": "设置昵称失败。",
+  "failed_to_start_match": "开局失败",
+  "discord_link": "想找更多玩家？来我们 Discord 的 <l>#lets-play</l> 频道看看吧！"
+}

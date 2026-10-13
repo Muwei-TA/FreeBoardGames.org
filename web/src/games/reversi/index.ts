@@ -1,16 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
 
-import translation from './locales/en.json';
+import translation from './locales/zh.json';
 
 export const reversiGameDef: IGameDef = {
   code: 'reversi',
-  codes: { en: 'reversi', pt: 'reversi' },
   name: translation.name,
-  translationStatus: {
-    pt: IGameTranslationStatus.DONE,
-  },
   contributors: ['JosefKuchar'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.AI }, { mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }],

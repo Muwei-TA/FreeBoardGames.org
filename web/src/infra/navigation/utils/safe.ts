@@ -11,7 +11,7 @@ export const getSafeGameCode = (game: IGameDef, language: Language) => {
   return game?.codes?.[safeLanguage] || game?.code;
 };
 
-export const getLanguage = (language: Language, defaultLanguage: Language = 'en') => {
+export const getLanguage = (language: Language, defaultLanguage: Language = 'zh') => {
   const i18n = getI18n();
   return i18n.locales.includes(language) ? language : defaultLanguage;
 };

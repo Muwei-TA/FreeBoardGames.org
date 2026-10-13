@@ -1,67 +1,67 @@
-#### Instructions (WIP)
+#### 说明（开发中）
 
-Create or join a game from the lobby. Local and network play is currently supported.
+在大厅中创建或加入一局游戏。目前支持本地和网络对战。
 
-Use the cardtable to play card games with remote players. This release will be updated as the community discovers issues.  This is a WIP effort and users may experience unexpected features.  
+使用牌桌与远程玩家玩纸牌游戏。随着社区发现问题的推进，本版本会持续更新。这是一个开发中的工作，用户可能会遇到意想不到的功能。
 
-The turns, stages, and phases, will be by game state. In WIP version the active player is rotated using the debug console. The followin commands allow you to play an entire game of cribbage.
+回合、阶段和流程均由游戏状态决定。在开发版中，当前玩家通过调试控制台轮换。以下命令可以让你玩一整局克里比奇（Cribbage）。
 
-* deal - deals a hand for two player cribbage.
-* putCardToCrib(index) - lays away the indexed card to dealer\'s crib.
-* cutForTurnCard(index) - cuts to reveal the "Start" or "Turn" card. accepts any integer
-* play(index) - plays the zero based index from the active players hand
-* peg(amount) - moves the back peg for the player forward by amount.
-* flipCrib - reveals the crib for the dealers counting.
+* deal - 为两名玩家发一手克里比奇牌。
+* putCardToCrib(index) - 将指定索引的牌放入发牌人的牌盒（crib）。
+* cutForTurnCard(index) - 切牌以翻开“起始牌”或“翻牌”。接受任意整数。
+* play(index) - 打出当前玩家手牌中以 0 为基准索引的牌。
+* peg(amount) - 将玩家的后置计分钉向前移动指定步数。
+* flipCrib - 翻开发牌人的牌盒以供计分。
 
-I am planning better state management next release. Then tackle a more responsive app mobile experiences.
+我计划在下一个版本中改进状态管理，然后着手优化移动端的应用体验。
 
-Thanks to all who helped and the continued support of FreeBoardGames.org
+感谢所有帮助过本项目的人，以及 FreeBoardGames.org 的持续支持。
 
 
 
-##### Cribbage on Card Table
-Card table is intended to simulate play for card enthusiasts. It provides abstractions for cards, table, and scoring, in a remote gaming experience.  The rules are enforced by the players.  There is no AI governing play.  In the current Version the debug console is used to navigate game activities. Only 'Local' play mode has been tested. Players alternate plays in a set flows. Score is kept on a board with pegs. Game is 121 points.
+##### 牌桌上的克里比奇
+牌桌旨在为纸牌爱好者模拟对局体验。它在远程游戏体验中提供了牌、桌面和计分的抽象。规则由玩家自行执行，没有 AI 管控对局。在当前版本中，游戏操作通过调试控制台完成。目前仅测试了“本地”游玩模式。玩家按固定流程交替行动，分数用带钉子的计分板记录。先得到 121 分者获胜。
 
-A cribbage game on 'Card Table' is played using the following flow:
+在“牌桌”上进行一局克里比奇的流程如下：
 
-1. The Deal - Console function ```deal() key 'e'``` requires no arguments; after clearing previous game state shuffles deck and deals six cards to north and south players. In cribbage no cut is offered (or accepted) prior to deal. Traditionally this is described by "It's a gentleman's game" and on some tables it is penalized for offering or accepting.
+1. 发牌 - 控制台函数 ```deal() 键 'e'``` 无需参数；清除上局状态后洗牌，并给南北两家各发六张牌。在克里比奇中，发牌前不会（也不允许）切牌。传统上这被描述为“这是绅士的游戏”，在某些牌桌上，主动提出或接受切牌甚至会被罚分。
 
-2. Layaway to Crib - Console function ```putToCrib(index) key 'f'``` takes a card's zero based index in the active players 'held' container and places it in the 'played' container for active player. There is no order for crib, although WIP requires manual player rotation. When both players 'lay to crib' play moves to the 'Cut for Turn' step.
+2. 放入牌盒 - 控制台函数 ```putToCrib(index) 键 'f'``` 取当前玩家“手牌”容器中以 0 为基准的牌索引，并将其放入当前玩家的“已出牌”容器。牌盒中的牌没有顺序要求，不过开发版需要手动轮换玩家。当双方都“放入牌盒”后，进入“切牌定翻牌”步骤。
 
-3. Cut for Turn - Console function ```cutShowTurn(index) - key 'h'``` After both players lay to crib, the non-dealer cuts the deck offering the new top card as the "turn". The turn is used in calculations during counting (a later phase).  Dealer scores 2pts (knobs) for receiving a jack as turn card.
+3. 切牌定翻牌 - 控制台函数 ```cutShowTurn(index) 键 'h'``` 当双方放完牌盒后，非发牌人切牌，露出新的顶牌作为“翻牌”。翻牌将在后续计分阶段参与计算。如果发牌人拿到的翻牌是 J，则得 2 分（knobs）。
 
-4. The Play - Console function ```play(index) key g``` Places the indexed card from 'held' container to the 'played' card container. Players alternate playing cards counting up towards 31.  When a player has no legal play for their turn (because playing a card count would exceed 31) they announce "GO" to their opponent, any remaining legal cards held by opponent are played on the run to 31. Players score points during play by 'pegging' points for play groups which describe: 15s (sums totalling 15), combinations of 
-'adjacent' pairs or runs, and reaching the highest total not passing 31.  The final card for the play is 1 pt ("a go") or 2 pts if summing 31 exactly. No scoring mechanism in current version (traditionally it's a board with pegs).
+4. 出牌 - 控制台函数 ```play(index) 键 g``` 将“手牌”容器中指定索引的牌放入“已出牌”容器。玩家交替出牌，点数累加至 31。当某玩家在自己的回合没有合法出牌（因为出牌会使总数超过 31）时，向对手宣布“GO”，对手手中剩余的合法牌可继续打出到 31 为止。玩家在出牌过程中通过“计分”为牌组得分，牌组包括：15（总和为 15）、相邻的对子或顺子、以及恰好达到不超过 31 的最高总数。出牌阶段的最后一张牌得 1 分（“a go”），若总和恰好为 31 则得 2 分。当前版本暂无计分机制（传统上是带钉子的计分板）。
 
-5. The Count - The count is performed in the following order: non-dealer, dealer-hand, dealer-crib. Non-dealer counts first describing their score by counting aloud ( e.g. 15-2, 15-4, pair is 6, pair is 8, a run of 3 for 9, flush of 4 for 13).  Their total amount is pegged by advancing their back peg by the score obtained beyond their forward peg on the cribbage board.  The crib is counted by invoking ```flipCrib() key 'j'``` on the debug console.
+5. 计分 - 计分按以下顺序进行：非发牌人、发牌人的手牌、发牌人的牌盒。非发牌人先报分，边念边算（例如：15-2、15-4、对子 6 分、对子 8 分、三连顺 9 分、四张同花 13 分）。其总分通过在克里比奇计分板上将后置钉越过前置钉前进相应分数来记录。牌盒通过在调试控制台调用 ```flipCrib() 键 'j'``` 来计分。
 
-6. The Win - A player "goes out" by reaching the score of 121. During any phase a game may end without resolving the remaining phases.  The point difference is doubled (skunk) when beaten by 31 points, quadrupled (double-skunk) when beaten by 61 points.
+6. 获胜 - 玩家率先达到 121 分即“出局获胜”（goes out）。在任意阶段，游戏都可以在剩余阶段未完成时结束。当分差达到 31 分时，分差翻倍（skunk）；达到 61 分时翻两番（double-skunk）。
 
-##### Notes
+##### 备注
 
-There are no hands which generate a count of 19 in cribbage -- when a player has no points to score they announce '19' as their score meaning 0. 
+克里比奇中不存在总分为 19 的手牌——当玩家无分可计时，他们会宣布“19”作为自己的得分，意为 0 分。
 
-When a player misses points they are due either at the turn, the play, or the count, their opponent may announce "muggins" and claim the missed points for their own score. A player is said to be "mugged".  
+当玩家在翻牌、出牌或计分阶段错失了应得的分数时，对手可以宣布“muggins”并将漏掉的分数收入自己账下，该玩家被称为“被打劫”（mugged）。
 
-The highest counting hand in Cribbage is 29 points -- '29' is frequently included iconography depicted on boards and equipment. The hand 29 is composed of cards containing 3x5s, and the Jack of the Turn Suit. The turn is the remaining 5. It is scored:
+克里比奇中最大的计分手牌是 29 分——“29”经常出现在计分板和装备的图案上。29 分手牌由 3 张 5 加上与翻牌同花色的 J 组成，翻牌是剩下的一张 5。计分如下：
 
-        8 permutations of 15s "15-16";
-        6 pairs of 5s "12 Fives for 28";
-        "knobs in hand for 29";
+        8 种 15 的组合 "15-16"；
+        6 对 5 "12 个 5 共 28"；
+        "手中的 knobs 得 29"；
 
-        "I have 15-16, 12 Fives for 28, and knobs makes 29"
+        “我有 15-16，12 个 5 共 28，加上 knobs 共 29”
 
-This hand is rare because you must be dealt 6 cards with 4 matching 5-5-5-Jt, and then your opponent cuts you a turn of 5t (roughly one in 200K). Scholars vary widely on the impact of external factors skewing this number (e.g. defensive play at end-play and crib choices).
+这手牌极为罕见，因为你必须先摸到 6 张牌中恰好有 5-5-5-Jt 的四张，然后对手又给你切出一张 5t 的翻牌（大约二十万分之一）。对于影响此概率的外部因素（例如残局的防守打法与牌盒的选择），学者们的看法差异很大。
 
-##### General Cribbage Play
+##### 克里比奇通用玩法
 
-(1) The Deal from 52 standard playing cards dealer is chosen by drawing low card in turns from deck. In the two player version each player is dealt 6 cards clockwise with the 'eldest' hand belonging to first opponent on the left (clockwise). 
+(1) 发牌 - 使用 52 张标准扑克牌，发牌人通过轮流从牌堆中抽牌、抽到最小牌者确定。两人版本中，每位玩家顺时针各发 6 张牌，“ eldest”手牌属于左边（顺时针方向）的第一位对手。
 
-(2) The Discard to Crib, where each player discards equal numbers of face down cards to make a 'crib' of 4, effectively dividing 12 cards dealt into 3 groups of 4: your opponents hand (4 cards), dealers hand (4 cards),and the crib(4 cards, two opponent, two dealers). The crib is a private area where the cards are kept in secrecy until they are used in the final stage.  
+(2) 弃牌入盒 - 每位玩家面朝下弃掉相同数量的牌，组成 4 张的“牌盒”，从而将发出的 12 张牌有效分成 3 组各 4 张：对手的手牌（4 张）、发牌人的手牌（4 张）和牌盒（4 张，对手两张、发牌人两张）。牌盒是一个私密区域，牌在里面保持隐蔽，直到最后阶段才被使用。
 
-(3) The Cut and Turn, non-dealer cuts a card which the dealer pulls from the top of the cut.  New top card is turned face up and designated 'The Turn' a card which is used in later stages to combine in scoring groups. The Turn is the first possible scoring play of any hand: 2 points are awarded the dealer for a turn of a Jack ('knobs'). 
+(3) 切牌与翻牌 - 非发牌人切牌，发牌人从切口处抽出顶牌。新的顶牌被翻开面朝上，称为“翻牌”，它将在后续阶段与各种牌组合计分。翻牌是任意一手牌最早的可能得分点：如果翻牌是 J，发牌人得 2 分（“knobs”）。
 
-(4) During 'The Play' players are counting sums of cards played; the play starts with non-dealer and alternates between players until a player signifies 'GO' when they cannot play legally, and the remaining player continues play until they have played to a sum of 31. If the final sum is less than 31 it is deemed a 'Go' worth 1pt.  If the sum is exactly 31, the player who played the card is awarded 2pts. If scorable combinations are created during play they are scored when the player announces the point value when laying down the card.
+(4) 在“出牌”阶段，玩家累计已出牌的点数；出牌由非发牌人开始，双方交替，直到某玩家无法合法出牌时宣布“GO”，剩余玩家继续出牌直到总和达到 31。如果最终总和小于 31，记为“Go”得 1 分；如果恰好为 31，出这张牌的玩家得 2 分。如果出牌过程中形成了可计分的组合，玩家在打出牌时报出分值即可得分。
 
-(5) And finally 'The Count', where 'The Turn' is combined with the (5a) The 4 cards in the opponents hand, (5b) the 4 in the dealers hand, and finally (5c) the 4 in the crib, to make specific groupings that score.
+(5) 最后是“计分”阶段，“翻牌”将与 (5a) 对手手中的 4 张牌、(5b) 发牌人手中的 4 张牌、以及最后的 (5c) 牌盒中的 4 张牌组合，构成特定的计分牌组。
+
 

@@ -1,0 +1,26 @@
+{
+    "name": "罗塔棋",
+    "description": "经典的古罗马游戏",
+    "descriptionTag": "免费玩罗塔棋。可与好友在线多人对战，或共享设备面对面游玩。",
+    "instructions": {
+      "videoId": "_XVs7CmSXTw",
+      "text": "罗塔棋是一款双人游戏。棋盘沿圆周均匀分布 8 个点位，中心还有第 9 个。游戏开始时双方各有 3 枚己方颜色的棋子。玩家轮流将 3 枚棋子放到棋盘 9 个点位中的任意位置。全部摆完后，双方移动棋子，设法沿圆周或直径连成 3 子一线。玩家不能越过对方的棋子。"
+    },
+
+    "board": {
+      "prefix_place_piece": "{{ prefix }} 放置棋子",
+      "prefix_move_piece": "{{ prefix }} 移动棋子",
+      "waiting_for_player": "等待 {{ pName }}...",
+      "player_turn": "轮到 {{ pName }}",
+      "game_over": {
+        "you_won": "你赢了",
+        "you_lost": "你输了",
+        "player_won": "{{ pName }} 获胜"
+      }
+    },
+
+    "local": {
+      "blue": "蓝方",
+      "red": "红方"
+    }
+  }

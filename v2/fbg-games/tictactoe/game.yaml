@@ -11,41 +11,16 @@ modes:
   - AI
 
 translations:
-  pt: DONE
-  de: DONE
+  zh: DONE
 
-en:
+zh:
   code: tictactoe
-  name: Tic-Tac-Toe
-  callout: A Classic Game
+  name: 井字棋
+  callout: 经典游戏
   descriptionTag: |
-    Play Tic-Tac-Toe (also called Noughts and Crosses) for free online. You can either play a single-player game against the computer, a multi-player game against a friend online, or share your device and play locally against a friend.
+    免费在线玩井字棋（也称圈叉棋）。你可以单人对抗电脑，在线与好友多人对战，或共用设备与好友本地对战。
   instructions:
     videoId: USEjXNCTvcc
     text: |
-      Tic-tac-toe is a classic two-player game. This game has a 3x3 grid, and in their turn, each player places their marker (X or O) on a cell in this grid.
-      In order to win, a player has to complete a full horizontal, vertical, or diagonal line with their marker. If all cells are filled and no player managed to do this, it is a draw.
-
-pt:
-  code: jogo-da-velha
-  name: Jogo da velha
-  callout: Um jogo clássico
-  descriptionTag: |
-    Jogue o Jogo da Velha (ou jogo do galo) online gratuitamente. Você pode jogar nos modo de jogador úncio contra o computador, modo de multi-jogador contra um amigo online, ou compartilhar seu dispositivo e jogar localmente contra um amigo.
-  instructions:
-    videoId: USEjXNCTvcc
-    text: |
-      O jogo da velha (ou jogo do galo) é um jogo clássico para dois jogadores. Este jogo tem uma tabuleiro de 3x3 e, por sua vez, cada jogador coloca seu marcador (X ou O) em uma célula dessa grade.
-      Para ganhar, um jogador deve completar uma linha horizontal, vertical ou diagonal com o seu marcador. Se todas as células forem preenchidas e nenhum jogador conseguir fazer isso, é um empate.
-
-de:
-  code: tictactoe
-  name: Tic-Tac-Toe
-  callout: Ein klassisches Spiel
-  descriptionTag: |
-    Spiele Tic-Tac-Toe (Drei Gewinnt) gratis online. Du kannst entweder alleine gegen den Computer spielen, oder gegen einen Freund, online oder auf deinem Gerät.
-  instructions:
-    videoId: USEjXNCTvcc
-    text: |
-      Tic-Tac-Toe ist ein klassisches Spiel für zwei Spieler. Dieses Spiel hat ein 3x3-Raster, und jeder Spieler platziert seinerseits seinen Marker (X oder O) auf einem Feld in diesem Raster.
-      Um zu gewinnen, muss ein Spieler mit seinem Marker eine vollständige horizontale, vertikale oder diagonale Linie vervollständigen. Wenn alle Zellen gefüllt sind und dies keinem Spieler gelungen ist, steht es unentschieden. 
+      井字棋是一款经典的两人游戏。棋盘为 3x3 网格，玩家轮流在网格的格子中放置自己的标记（X 或 O）。
+      要获胜，玩家必须用自己的标记连成一条完整的横线、竖线或斜线。如果所有格子都被填满且没有玩家做到这一点，则为平局。

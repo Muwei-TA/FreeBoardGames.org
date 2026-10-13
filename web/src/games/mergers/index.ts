@@ -5,14 +5,14 @@ import instructions from './instructions.md';
 
 export const mergersGameDef: IGameDef = {
   code: 'mergers',
-  name: 'Mergers',
+  name: '酒店并购',
   contributors: ['lfkellogg'],
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }],
   minPlayers: 3,
   maxPlayers: 6,
-  description: 'Similar to Acquire',
-  descriptionTag: 'Invest in hotels and dominate the market!',
+  description: '类似《并购》（Acquire）',
+  descriptionTag: '投资酒店，主宰市场！',
   instructions: {
     text: instructions,
   },

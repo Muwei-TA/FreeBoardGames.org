@@ -5,14 +5,14 @@ import instructions from './instructions.md';
 
 export const BarnBarterDef: IGameDef = {
   code: 'barnbarter',
-  name: 'Barn Barter',
+  name: '农场物物交换',
   contributors: ['Spooky-O'],
   minPlayers: 1, // TODO: Min is 3
   maxPlayers: 5,
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }, { mode: GameMode.LocalFriend }], // TODO : no Local
-  description: 'Haggle for Animals!',
-  descriptionTag: 'Similar to Kuh Handel.',
+  description: '为动物讨价还价！',
+  descriptionTag: '类似《牛交易》（Kuh Handel）。',
   instructions: {
     videoId: '9OInfGB7Ejs',
     text: instructions,

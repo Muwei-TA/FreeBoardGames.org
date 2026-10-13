@@ -4,24 +4,24 @@ jest.mock('react-i18next/dist/commonjs/context', () => {
   const glob = jest.requireActual('glob');
   const { readFileSync } = jest.requireActual('fs');
 
-  const paths: string[] = glob.sync('public/static/locales/en/**/*.json', { nonull: false });
+  const paths: string[] = glob.sync('public/static/locales/zh/**/*.json', { nonull: false });
   if (!paths.length) throw new Error('Locale files not found');
 
   i18next.init({
-    lng: 'en',
-    supportedLngs: ['en', 'pt'],
+    lng: 'zh',
+    supportedLngs: ['zh'],
     initImmediate: false,
     resources: paths.reduce(
       (resources, path: string) => {
-        const shortPath = path.replace('public/static/locales/en/', '').replace('.json', '');
+        const shortPath = path.replace('public/static/locales/zh/', '').replace('.json', '');
         const translations = JSON.parse(readFileSync(path, 'utf-8'));
-        resources.en = {
-          ...resources.en,
+        resources.zh = {
+          ...resources.zh,
           [shortPath]: translations,
         };
         return resources;
       },
-      { en: {} },
+      { zh: {} },
     ),
   });
 

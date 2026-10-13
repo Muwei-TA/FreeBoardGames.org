@@ -1,17 +1,12 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const zwanzigerrufenDef: IGameDef = {
   code: 'zwanzigerrufen',
   name: translation.name,
   contributors: ['tuxor1337'],
-  translationStatus: {
-    de: IGameTranslationStatus.DONE,
-    fr: IGameTranslationStatus.DONE,
-    pt: IGameTranslationStatus.DONE,
-  },
   imageURL: Thumbnail,
   modes: [{ mode: GameMode.OnlineFriend }],
   minPlayers: 4,

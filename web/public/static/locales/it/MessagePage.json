@@ -1,8 +1,0 @@
-{
-  "go_home": "vai alla Home",
-  "game_not_found": "Gioco non trovato",
-  "invalid_game_mode": "Modalità di gioco non valida",
-  "connecting": "Connessione in corso...",
-  "downloading": "Download di {{ name }} in corso",
-  "failed_to_download": "Errore nel donload di {{ name }}"
-}

@@ -1,15 +1,10 @@
 const Thumbnail = require('./media/thumbnail.jpg');
 import { GameMode } from 'gamesShared/definitions/mode';
-import { IGameDef, IGameStatus, IGameTranslationStatus } from 'gamesShared/definitions/game';
-import translation from './locales/en.json';
+import { IGameDef, IGameStatus } from 'gamesShared/definitions/game';
+import translation from './locales/zh.json';
 
 export const seabattleGameDef: IGameDef = {
   code: 'seabattle',
-  codes: { de: 'seabattle', en: 'seabattle', pt: 'batalha-naval' },
-  translationStatus: {
-    de: IGameTranslationStatus.DONE,
-    pt: IGameTranslationStatus.DONE,
-  },
   name: translation.name,
   contributors: ['flamecoals'],
   imageURL: Thumbnail,

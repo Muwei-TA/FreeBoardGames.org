@@ -1,0 +1,24 @@
+{
+  "name": "九子棋",
+  "description": "又称磨盘棋",
+  "descriptionTag": "免费在线玩九子棋（又称磨盘棋、\n莫里斯棋）。可与好友在线多人对战或面对面本地游玩！",
+  "instructions": {
+    "videoId": "zvbIKOHIkRE",
+    "text": "九子棋是一款经典的双人棋盘游戏。\n\n游戏第一阶段，双方轮流将棋子放到空位上。若一方在一条线上摆成三子，即成“磨”，可以移走对方一枚棋子。所有棋子摆完后第一阶段结束。\n\n第二阶段，双方可以把自己的棋子移动到相邻空位（不允许跳跃）。与第一阶段一样，成磨后可以移走对方一枚棋子。\n\n当一方只剩两枚棋子时游戏结束。"
+  },
+  "board" : {
+    "white": "白方",
+    "red": "红方",
+    "players_turn": "轮到 {{ playerName }}",
+    "wait_for_player": "等待 {{ playerName }}...",
+    "waiting_for_opponent": "等待对手...",
+    "remove_piece": "{{ prefix }} 移除棋子",
+    "place_piece": "{{ prefix }} 放置棋子",
+    "move_piece": "{{ prefix }} 移动棋子",
+    "player_won": "{{ winnerName }} 获胜",
+    "white_won": "白方获胜",
+    "red_won": "红方获胜",
+    "you_won": "你赢了",
+    "you_lost": "你输了"
+  }
+}

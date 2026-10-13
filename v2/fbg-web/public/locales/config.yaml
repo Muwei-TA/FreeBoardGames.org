@@ -1,12 +1,4 @@
-en:
-  name: English
+zh:
+  name: 中文
   playVerb: play
-  xGames: "{{x}} games"
-pt:
-  name: Português
-  playVerb: jogar
-  xGames: "{{x}} jogos"
-de:
-  name: Deutsch
-  playVerb: spiele
-  xGames: "{{x}} spiele"
+  xGames: "{{x}} 个游戏"

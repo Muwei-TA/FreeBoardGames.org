@@ -2,17 +2,17 @@ import puppeteer from 'puppeteer';
 
 const USAGE = "Usage: yarn run test [URL] [HOST]";
 const DEFAULT_URL = "https://www.freeboardgames.org";
-const ONLINE_FRIEND_CARD_XPATH = "//div[contains(., 'Online Friend')]";
-const PLAY_BUTTON_XPATH = "//Button[contains(., 'Play')]";
-const START_MATCH_BUTTON_XPATH = "//Button[contains(., 'Start match')]";
-const INVITE_FRIENDS_TITLE_XPATH = "//h2[contains(.,'Invite Your Friends')]";
+const ONLINE_FRIEND_CARD_XPATH = "//div[contains(., '在线好友')]";
+const PLAY_BUTTON_XPATH = "//Button[contains(., '游玩')]";
+const START_MATCH_BUTTON_XPATH = "//Button[contains(., '开始对局')]";
+const INVITE_FRIENDS_TITLE_XPATH = "//h2[contains(.,'邀请你的好友')]";
 const ROOM_LINK_XPATH = "//input[contains(@value, 'http')]";
 const TIC_TAC_TOE_SELECTOR = "a[href*='tictactoe']";
-const YOUR_TURN_TITLE_XPATH = "//h5[contains(.,'YOUR TURN')]";
-const GAME_OVER_TITLE_XPATH = "//h6[contains(.,'Game Over')]";
-const GAMES_TITLE_XPATH = "//h2[contains(.,'Games')]";
-const GAME_MODE_TITLE_XPATH = "//h2[contains(.,'Choose game mode')]";
-const ENTER_NICK_TITLE_XPATH = "//h3[contains(.,'Enter Your Nickname')]";
+const YOUR_TURN_TITLE_XPATH = "//h5[contains(.,'轮到你了')]";
+const GAME_OVER_TITLE_XPATH = "//h6[contains(.,'游戏结束')]";
+const GAMES_TITLE_XPATH = "//h2[contains(.,'在线免费玩棋盘游戏')]";
+const GAME_MODE_TITLE_XPATH = "//h2[contains(.,'选择游戏模式')]";
+const ENTER_NICK_TITLE_XPATH = "//h3[contains(.,'输入你的昵称')]";
 let screenshotCount = 0;
 
 function highlightLog(text: string) {

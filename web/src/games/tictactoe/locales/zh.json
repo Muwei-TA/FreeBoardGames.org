@@ -1,0 +1,20 @@
+{
+  "name": "井字棋",
+  "description": "经典游戏",
+  "descriptionTag": "免费在线玩井字棋（也称圈叉棋）。你可以单人对抗电脑，在线与好友多人对战，或共用设备与好友本地对战。",
+  "instructions": {
+    "videoId": "USEjXNCTvcc",
+    "text": "井字棋是一款经典的两人游戏。棋盘为 3x3 网格，玩家轮流在网格的格子中放置自己的标记（X 或 O）。\n\n要获胜，玩家必须用自己的标记连成一条完整的横线、竖线或斜线。如果所有格子都被填满且没有玩家做到这一点，则为平局。\n"
+  },
+  "easy": "简单",
+  "hard": "困难",
+  "your_turn": "轮到你了",
+  "waiting_for_opponent": "等待对手中…",
+  "red_s_turn": "红方回合",
+  "green_s_turn": "绿方回合",
+  "you_won": "你赢了",
+  "you_lost": "你输了",
+  "red_won": "红方赢了",
+  "green_won": "绿方赢了",
+  "draw": "平局"
+}

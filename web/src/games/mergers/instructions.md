@@ -1,66 +1,66 @@
-## Introduction
+## 简介
 
-In Mergers, players earn money by buying and selling stock in hotel chains.
+在《酒店并购》中，玩家通过买卖连锁酒店的股票来赚钱。
 
-Each tile placed on the board represents a hotel, and each hotel has one specific square where it can be built. As players build hotels, if they are adjacent they form a hotel chain, and players can buy stock in the company. When two chains are connected, the companies merge.
+棋盘上放置的每块板块代表一家酒店，每家酒店都有唯一可建造的格子。随着玩家建造酒店，彼此相邻的酒店会组成连锁集团，玩家即可购买该公司的股票。当两个连锁集团连接在一起时，公司就会合并。
 
-Chains that merge into larger ones, or ones that remain on the board at the end of the game, pay out bonuses to the players with the most stock. These bonuses, along with the appreciation of stock as the hotel chains grow, are how you make money. The bigger the hotel chain, the higher the stock price and bonuses.
+被并入更大集团的连锁，或在游戏结束时仍留在棋盘上的连锁，会向持股最多的玩家发放奖励。这些奖励连同连锁集团壮大带来的股票升值，就是你赚钱的途径。连锁集团越大，股价和奖励就越高。
 
-The player who accumulates the most wealth by the end of the game is the winner!
+游戏结束时积累财富最多的玩家获胜！
 
-## Starting the game
+## 开始游戏
 
-_Note: This happens automatically when the game starts_
+_注：游戏开始时自动进行_
 
-Players start with \$6000 each. Each player draws and places a hotel, and the player who draws the hotel closest to the top left of the board goes first. The players then each draw 6 hotels. Any adjacent hotels built during the initial draw do not form a chain, until another adjacent hotel is built later during a player's turn.
+每位玩家初始有 \$6000。每位玩家抽一块酒店板块并放置，抽到离棋盘左上角最近酒店的玩家先行。随后每位玩家再各抽 6 块酒店板块。初始抽牌阶段建成的相邻酒店不会组成连锁，直到后续某位玩家的回合中再建成一家相邻酒店时才会成链。
 
-## During your turn
+## 你的回合
 
-Each turn, you take the following actions:
+每回合你依次执行以下行动：
 
-1. Build a hotel
-2. Buy stock
-3. Draw hotels
+1. 建造酒店
+2. 购买股票
+3. 抽取酒店
 
-### Action 1: Build a hotel
+### 行动一：建造酒店
 
-On the board, the squares marked with a "+" are the hotels you've drawn. Click one of them to build the hotel on the square.
+棋盘上标有“+”的格子是你抽到的酒店板块。点击其中一个，即可在该格子上建造酒店。
 
-Gray squares indicate tiles that have been built, but that are not part of a chain. If you build a hotel adjacent to one of these tiles (meaning they share an edge), these hotels form a new chain. You get to choose which chain to form (there are 7 different chains, across 3 pricing tiers, click "SHOW GUIDE" to see the stock prices and bonuses). You then get 1 free share of stock in the new company. If all 7 chains are already on the board you cannot play a tile that would form a new chain.
+灰色格子表示已建造但尚未加入任何连锁的板块。如果你建造的酒店与这些格子相邻（即共享一条边），这些酒店会组成新的连锁。你可以选择组成哪条连锁（共有 7 条不同的连锁，分属 3 个价格档位，点击“显示指南”可查看股价与奖励）。随后你免费获得新公司的 1 股股票。如果 7 条连锁已全部在棋盘上，你就不能打出会形成新连锁的板块。
 
-If you build a hotel next to a hotel that is already part of a chain, the hotel you built becomes part of the chain.
+如果你建造的酒店紧邻一家已属于某连锁的酒店，你建造的酒店就加入该连锁。
 
-If you build a hotel that connects two existing chains, this causes a merger (see "Special case: Mergers!" below).
+如果你建造的酒店连接了两个现有连锁，则会触发合并（见下方“特殊情况：合并！”）。
 
-**Note: chains with 11 or more hotels cannot be merged into a larger one.** If you have a tile that would create such a merger, that tile will be permanently removed from the game, and you can replace it the next time you draw tiles.
+**注意：拥有 11 家及以上酒店的连锁不能再被并入更大的连锁。** 如果你手中的板块会造成这种合并，该板块将被永久移出游戏，下次抽板块时你可以补充一张。
 
-### Action 2: Buy stock
+### 行动二：购买股票
 
-You then have the option to buy up to three stock from any of the chains currently on the board that have stock available. There are 25 total of each stock. The prices, and the number of each that remain, are listed at the top of the page. Click "SHOW GUIDE" to see how the prices grow with the chain size.
+接下来你可以从棋盘上现有且尚有股票可售的连锁中，最多购买三股。每种股票共 25 股。页面顶部列出了价格和剩余数量。点击“显示指南”可查看价格如何随连锁规模增长。
 
-### Action 3: Draw hotels
+### 行动三：抽取酒店
 
-You then draw hotels until you have 6. Typically you will draw one to replace the one you just built. However if you have any permanently unplayable hotels they will be replaced at this point as well. If you draw a permenently unplayable hotel, you must hold onto it until your next turn.
+然后你抽酒店板块直到手中有 6 块。通常你会抽一张来替换刚建造的那块。不过，如果你手中还有永久无法打出的板块，此时也会被替换。如果你抽到了永久无法打出的酒店板块，你必须持有它直到下个回合。
 
-## Special case: Mergers!
+## 特殊情况：合并！
 
-During your turn, **if you build a hotel that connects two existing chains, this causes a merger.** The smaller chain will be merged into the larger one, and removed from the board. If there is a tie, the merging player chooses which one will absorb the other. If the hotel merges more than two chains, the merging player chooses which will be merged first.
+在你的回合中，**如果你建造的酒店连接了两个现有连锁，就会触发合并。** 较小的连锁将被并入较大的连锁并从棋盘上移除。若两者规模相同，则由触发合并的玩家选择哪一方吞并另一方。如果该酒店连接的连锁多于两个，由触发合并的玩家选择先合并哪一条。
 
-After that a few things happen:
+随后会发生以下几件事：
 
-1. Two bonuses are paid out according to who owns stock in the _smaller_ chain: one to the players with the most stock, and one to the player with the second most stock (click "SHOW GUIDE" to see how the bonuses grow with chain size). If only one player has stock in the chain, they get both bonuses. If there are ties for first or second, the bonuses can be split across the tied players.
+1. 根据 _较小_ 连锁的持股情况发放两笔奖励：一笔给持股最多的玩家，一笔给持股第二多的玩家（点击“显示指南”可查看奖励如何随连锁规模增长）。若只有一位玩家持有该连锁的股票，两笔奖励都归他。若第一或第二名出现并列，奖励可在并列玩家之间分配。
 
-2. Each player with stock in the smaller company chooses whether to: 1) sell stock; 2) swap 2-for-1 with the larger chain's stock, if available; or 3) keep stock. They can keep, swap, or sell some or all of their stock, in any combination.
+2. 持有较小公司股票的每位玩家可选择：1) 卖出股票；2) 与较大连锁的股票按 2 换 1 交换（若有余量）；或 3) 继续持有。他们可以任意组合，部分或全部地持有、交换或卖出股票。
 
-3. The smaller chain is absorbed into the bigger chain and removed from the board. The player who built the merging hotel then continues their turn.
+3. 较小连锁被较大连锁吞并并从棋盘上移除。建造合并酒店的玩家随后继续自己的回合。
 
-## End of the game
+## 游戏结束
 
-When there is either a chain of 41 or more hotels, or all chains on the board are unmergeable (11 or more hotels), each player has the option during their turn to end the game.
+当棋盘上出现拥有 41 家及以上酒店的连锁，或所有连锁都达到不可合并的规模（11 家及以上）时，每位玩家在自己的回合都可以选择结束游戏。
 
-When the game is declared over:
+宣布游戏结束后：
 
-1. First and second bonuses are paid out to the players with the most stock in the chains that remain on the board.
-2. The stocks that players have from those chains are sold back at the current stock price.
+1. 仍留在棋盘上的连锁向持股最多的玩家发放第一和第二奖励。
+2. 玩家持有的这些连锁的股票按当前股价卖出。
 
-At that point, the player with the most money is declared the winner!
+此时，钱最多的玩家即为胜者！

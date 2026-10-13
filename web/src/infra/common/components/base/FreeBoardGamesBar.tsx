@@ -48,11 +48,7 @@ function renderLanguageSelect() {
         onChange={handleLanguageChange}
         renderValue={() => <LanguageIcon />}
       >
-        <MenuItem value="en">English</MenuItem>
-        <MenuItem value="pt">Português</MenuItem>
-        <MenuItem value="de">Deutsch</MenuItem>
-        <MenuItem value="fr">Français</MenuItem>
-        <MenuItem value="it">Italiano</MenuItem>
+        <MenuItem value="zh">中文</MenuItem>
       </Select>
     </div>
   );

@@ -58,7 +58,7 @@ export async function getStaticProps({
     if (
       status != GameTranslationStatus.DONE &&
       status != GameTranslationStatus.PARTIAL &&
-      params.lang != "en"
+      params.lang != "zh"
     ) {
       continue;
     }
