@@ -17,3 +17,6 @@ web/src/games/index.ts
 helm/values.staging.yaml
 helm/values.prod.yaml
 .DS_Store
+
+# Generated AGPL source download archive
+web/public/source.tar.gz

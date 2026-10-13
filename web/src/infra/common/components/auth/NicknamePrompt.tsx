@@ -10,7 +10,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { compose } from 'recompose';
 import { WithTranslation, withTranslation } from 'infra/i18n';
 
-const VALID_NICKNAME_REGEX = /^[A-Za-z0-9]*$/;
+import { isValidNickname } from '../../helpers/NicknameValidation';
 
 interface InnerProps extends WithTranslation {}
 
@@ -35,7 +35,7 @@ export const NicknamePrompt = enhance(
   class NicknamePrompt extends React.Component<InnerProps & OutterProps, State> {
     constructor(props: InnerProps & OutterProps) {
       super(props);
-      this.state = { nameTextField: '', hasChangedTextSinceError: false };
+      this.state = { nameTextField: props.nickname || '', hasChangedTextSinceError: false };
     }
 
     render() {
@@ -51,7 +51,6 @@ export const NicknamePrompt = enhance(
               onKeyPress={this._setNicknameOnEnterButton}
               helperText={errorText}
               error={!!errorText}
-              inputProps={{ maxLength: 15 }}
             />
           </div>
           <Button
@@ -106,8 +105,8 @@ export const NicknamePrompt = enhance(
 
     private getError() {
       let error;
-      if (!this.state.nameTextField.match(VALID_NICKNAME_REGEX)) {
-        error = this.props.t('alphanumerical_characters_only');
+      if (this.state.nameTextField && !isValidNickname(this.state.nameTextField)) {
+        error = '昵称需为 1–32 个字符，不能含空白或控制字符';
       } else if (!this.state.hasChangedTextSinceError) {
         error = this.props.errorText;
       }
@@ -116,7 +115,7 @@ export const NicknamePrompt = enhance(
 
     _nicknameIsValid = () => {
       const name = this.state.nameTextField;
-      return name?.length > 0 && name.match(VALID_NICKNAME_REGEX);
+      return isValidNickname(name);
     };
 
     _onClick = () => {

@@ -19,7 +19,13 @@ async function bootstrap() {
       if (req.ip === "::ffff:127.0.0.1" || req.ip === "127.0.0.1") {
         next();
       } else {
-        csrf(req, res, next);
+        csrf(req, res, (error) => {
+          if (error) {
+            res.status(403).json({ errors: [{ message: 'Invalid CSRF token' }] });
+            return;
+          }
+          next();
+        });
       }
     }
     app.use(conditionalCSRF);

@@ -1,0 +1,161 @@
+name: freeboardgames-20261013
+x-defaults:
+  restart: unless-stopped
+  networks: &id001
+  - private
+  logging: &id002
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: '3'
+services:
+  postgres:
+    restart: unless-stopped
+    networks: *id001
+    logging: *id002
+    image: postgres@sha256:1a6ab3f5345eb6dbe04a1349529caabdb0ab09293a09590fad07b2246bfa4b54
+    environment:
+      POSTGRES_USER: fbg
+      POSTGRES_DB: fbg
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?required}
+    volumes:
+    - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U fbg -d fbg
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  redis:
+    restart: unless-stopped
+    networks: *id001
+    logging: *id002
+    image: redis@sha256:c94085d298b738be22c9ccdc0ac3761fa6649df7dd82ad1d42367f3cb9714935
+    command:
+    - redis-server
+    - --save
+    - ''
+    - --appendonly
+    - 'no'
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  backend:
+    restart: unless-stopped
+    networks: *id001
+    logging: *id002
+    image: sha256:75a4991dd73128ddd2d644b021b1e21501aad433e55e3e635e14a375f58b79ef
+    environment:
+      JWT_SECRET: ${JWT_SECRET:?required}
+      POSTGRES_URL: postgresql://fbg:${POSTGRES_PASSWORD}@postgres:5432/fbg
+      FBG_REDIS_HOST: redis
+      FBG_REDIS_PORT: '6379'
+      FORCE_DB_SYNC: 'false'
+      BGIO_PRIVATE_SERVERS: http://bgio:8001
+      BGIO_PUBLIC_SERVERS: https://boardgames.muwei.xyz
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - -e
+      - require('http').get('http://127.0.0.1:3001/healthz',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 40s
+    cpus: 1
+    mem_limit: 768m
+    pids_limit: 128
+  web:
+    restart: unless-stopped
+    networks: *id001
+    logging: *id002
+    image: sha256:42a4072099d77e6018ef0e1b90a96c0de46e63cbd4f88cdbd730c92c54bbc9ec
+    environment:
+      SERVER_TYPE: WEB
+      FBG_BACKEND_TARGET: http://backend:3001
+      GIT_REV: 41a0077b7e76c1050b28f67537f00705a9095ed5
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - -e
+      - require('http').get('http://127.0.0.1:3000/',r=>process.exit(r.statusCode<400?0:1)).on('error',()=>process.exit(1))
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 60s
+    cpus: 1
+    mem_limit: 768m
+    pids_limit: 128
+  bgio:
+    restart: unless-stopped
+    networks: *id001
+    logging: *id002
+    image: sha256:42a4072099d77e6018ef0e1b90a96c0de46e63cbd4f88cdbd730c92c54bbc9ec
+    environment:
+      SERVER_TYPE: BGIO
+      POSTGRES_URL: postgresql://fbg:${POSTGRES_PASSWORD}@postgres:5432/fbg
+      BGIO_PUBLIC_SERVERS: https://boardgames.muwei.xyz
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - node
+      - -e
+      - require('http').get('http://127.0.0.1:8001/games',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))
+      interval: 20s
+      timeout: 8s
+      retries: 5
+      start_period: 60s
+    cpus: 1
+    mem_limit: 768m
+    pids_limit: 128
+  gateway:
+    restart: unless-stopped
+    networks:
+    - private
+    logging: *id002
+    image: nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+    volumes:
+    - ./gateway.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      web:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+      bgio:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -q -O /dev/null http://127.0.0.1:8080/
+      interval: 20s
+      timeout: 8s
+      retries: 5
+    cpus: 0.5
+    mem_limit: 128m
+    pids_limit: 64
+networks:
+  edge:
+    external: true
+    name: freeboardgames-20261013-edge
+  private:
+    external: true
+    name: freeboardgames-20261013-private
+volumes:
+  postgres-data:
+    name: freeboardgames-20261013-postgres

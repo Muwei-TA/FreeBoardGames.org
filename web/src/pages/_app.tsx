@@ -7,6 +7,7 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { ApolloProvider } from '@apollo/react-hooks';
 import * as Sentry from '@sentry/browser';
 import { ThemeProvider } from 'infra/common';
+import { BlackRoomIdentity } from 'infra/common/components/auth/BlackRoomIdentity';
 import { SelfXSSWarning } from 'infra/common/components/base/SelfXSSWarning';
 import AddressHelper from 'infra/common/helpers/AddressHelper';
 import { wrapper } from 'infra/common/redux/store';
@@ -94,7 +95,9 @@ class DefaultApp extends App {
           <SelfXSSWarning />
           <ApolloProvider client={client}>
             <GameProvider {...pageProps}>
-              <Component {...pageProps} />
+              <BlackRoomIdentity>
+                <Component {...pageProps} />
+              </BlackRoomIdentity>
             </GameProvider>
           </ApolloProvider>
         </ThemeProvider>

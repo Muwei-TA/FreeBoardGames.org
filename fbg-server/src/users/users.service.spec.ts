@@ -39,15 +39,21 @@ describe('UsersService', () => {
   });
 
   it('should throw error for long nickname', async () => {
-    const nickname = '0123456789012345';
+    const nickname = '𠮷'.repeat(33);
     const newUserId = service.newUser({ nickname });
     await expect(newUserId).rejects.toThrow();
   });
 
-  it('should throw error for non-alphanumerical nickname', async () => {
-    const nickname = 'hi!';
+  it('should throw error for control characters in nickname', async () => {
+    const nickname = 'hi\n';
     const newUserId = service.newUser({ nickname });
     await expect(newUserId).rejects.toThrow();
+  });
+
+  it('should roundtrip Chinese and non-BMP nicknames', async () => {
+    const nickname = '社团𠮷😀';
+    const id = await service.newUser({ nickname });
+    expect((await service.getById(id)).nickname).toEqual(nickname);
   });
 
   it('should return undefined if user does not exist', async () => {

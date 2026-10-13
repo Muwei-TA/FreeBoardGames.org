@@ -1,3 +1,4 @@
+import { BlackRoomSession, temporaryGameStorage } from './BlackRoomSession';
 import AddressHelper from '../helpers/AddressHelper';
 import SSRHelper from '../helpers/SSRHelper';
 import { ActionNames, SyncUserAction } from '../redux/actions';
@@ -28,17 +29,37 @@ const httpLink = createHttpLink({
 });
 
 export class LobbyService {
-  private static catchUnauthorizedGql = (dispatch: Dispatch<SyncUserAction>) => (e: ApolloError) => {
-    if (e.graphQLErrors.find((error) => error.extensions.exception.status === 401)) {
-      // invalidate the user's auth and adjust our store accordingly:
-      LobbyService.invalidateUserAuth();
-      dispatch(LobbyService.getSyncUserAction());
+  private static blackRoomSession: BlackRoomSession;
+
+  public static async initializeBlackRoom(username?: string) {
+    // Leave legacy localStorage untouched; it is never read as an identity.
+    const session = new BlackRoomSession(username ? sessionStorage : temporaryGameStorage());
+    this.blackRoomSession = session;
+    session.activate(username || 'temporary');
+    if (!username) return;
+    if (!this.getUserToken() || !this.getNickname()) {
+      await this.newUser(username);
+    } else if (this.getNickname() !== username) {
+      // A fresh page defaults to the current site username, retaining the game ID.
+      await this.renameUser((action) => action, username);
     }
-    throw e;
-  };
+  }
+
+  private static catchUnauthorizedGql(dispatch: Dispatch<SyncUserAction>) {
+    const session = this.blackRoomSession;
+    return (e: ApolloError) => {
+      if (this.blackRoomSession === session &&
+          e.graphQLErrors.find((error) => error.extensions?.exception?.status === 401)) {
+        LobbyService.invalidateUserAuth();
+        dispatch(LobbyService.getSyncUserAction());
+      }
+      throw e;
+    };
+  }
 
   /** sends user's nickname to backend.  backend returns the jwt token.  */
   public static async newUser(nickname: string): Promise<string> {
+    const session = this.blackRoomSession;
     const client = this.getClient();
     const result = await client.mutate<NewUser, NewUserVariables>({
       mutation: gql`
@@ -52,18 +73,19 @@ export class LobbyService {
     });
 
     const jwtToken = result.data.newUser.jwtToken;
-    this.setNickname(nickname);
-    this.setJwt(jwtToken);
+    if (this.blackRoomSession !== session) throw new Error('BlackRoom identity changed');
+    session.set(FBG_NICKNAME_KEY, nickname);
+    session.set(FBG_USER_TOKEN_KEY, jwtToken);
 
     return jwtToken;
   }
 
   public static async setNickname(nickname: string) {
-    localStorage.setItem(FBG_NICKNAME_KEY, nickname);
+    this.blackRoomSession.set(FBG_NICKNAME_KEY, nickname);
   }
 
   public static async setJwt(jwtToken: string) {
-    localStorage.setItem(FBG_USER_TOKEN_KEY, jwtToken);
+    this.blackRoomSession.set(FBG_USER_TOKEN_KEY, jwtToken);
   }
 
   public static async getMatch(dispatch: Dispatch<SyncUserAction>, matchId: string): Promise<GetMatch> {
@@ -137,6 +159,7 @@ export class LobbyService {
   }
 
   public static async renameUser(dispatch: Dispatch<SyncUserAction>, nickname: string): Promise<void> {
+    const session = this.blackRoomSession;
     const client = this.getClient();
     await client
       .mutate({
@@ -149,9 +172,10 @@ export class LobbyService {
       })
       .catch(this.catchUnauthorizedGql(dispatch));
 
+    if (this.blackRoomSession !== session) throw new Error('BlackRoom identity changed');
+    session.set(FBG_NICKNAME_KEY, nickname);
     const payload: ReduxUserState = { ready: true, loggedIn: true, nickname };
     dispatch({ type: ActionNames.SyncUser, payload });
-    localStorage.setItem(FBG_NICKNAME_KEY, nickname);
   }
 
   public static async updateRoom(dispatch: Dispatch<SyncUserAction>, room: UpdateRoomInput): Promise<void> {
@@ -319,13 +343,13 @@ export class LobbyService {
 
   public static getUserToken() {
     if (!SSRHelper.isSSR()) {
-      return localStorage.getItem(FBG_USER_TOKEN_KEY);
+      return this.blackRoomSession?.get(FBG_USER_TOKEN_KEY);
     }
   }
 
   public static getNickname(): string {
     if (!SSRHelper.isSSR()) {
-      return localStorage.getItem(FBG_NICKNAME_KEY);
+      return this.blackRoomSession?.get(FBG_NICKNAME_KEY);
     }
   }
 
@@ -341,13 +365,13 @@ export class LobbyService {
   }
 
   public static invalidateUserAuth() {
-    localStorage.removeItem(FBG_NICKNAME_KEY);
-    localStorage.removeItem(FBG_USER_TOKEN_KEY);
+    this.blackRoomSession?.clear();
   }
 
   public static getClient() {
+    const session = this.blackRoomSession;
     const authLink = setContext((_, { headers }) => {
-      const jwtToken = this.getUserToken() || '';
+      const jwtToken = session?.get(FBG_USER_TOKEN_KEY) || '';
       // return the headers to the context so httpLink can read them
       return {
         headers: {
